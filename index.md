@@ -1,4 +1,4 @@
 ---
 layout: default
 ---
-# Computer Club
+computer club
