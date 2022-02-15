@@ -10,16 +10,22 @@
 <style>
       body {
        font-family: 'Montserrat';font-size: 22px;
+       background-color: #132b7d;
+      }
+      #page{
+        padding: 25px;
+        background-color: #ffffff;
+        background-origin: padding-box;
       }
       #a-title{
-        color:#33cc33;
+        color:#233f90;
         text-decoration: none;
         font-family: 'Press Start 2P';font-size: 22px;
       }
       #a-title:hover{
-        color:#66ff66;
+        color:#4c64a4;
       }
-     div ul {
+      .navbar {
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -27,20 +33,24 @@
       background-color: #333;
     }
 
-   div li {
+    .navbar a{
       float: left;
-    }
-
-   div li a {
       display: block;
       color: white;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
     }
-
-   div li a:hover {
+    #loginbutton {
+    float: right;
+    margin-right: 16px;
+    background-color: #233f90;
+    }
+    .navbar a:hover {
       background-color: #111;
+    }
+    #loginbutton:hover {
+      background-color: #4c64a4;
     }
 
   /* Full-width input fields */
@@ -55,7 +65,7 @@
 
   /* Set a style for all buttons */
   button {
-    background-color: #04AA6D;
+    background-color: #233f90;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -161,7 +171,7 @@
   </head>
 
   <body>
-
+    <div id = "page">
     <header>
       <div class="container">
         <a id="a-title" href="{{ '/' | relative_url }}">
@@ -170,19 +180,18 @@
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
       </div>
     </header>
-    <div>
-    <ul>
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
-      <li><a href="">Seating</a></li>
-      <li><a href="">Admin Portal</a></li>
-      <li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
-    </ul>
+
+    <div class="navbar">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="">Seating</a>
+      <a href="">Admin Portal</a>
+      <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton">Login</a></li>
     </div>
+
     <div id="id01" class="modal">  
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="exitcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  
     </div>
 
     <div class="container">
@@ -192,7 +201,7 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <button class = "submit" type="submit">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -210,6 +219,7 @@
         {{ content }}
       </section>
     </div>
+  </div>
   </body>
 </html>
 <script>
