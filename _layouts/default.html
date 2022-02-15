@@ -171,16 +171,15 @@
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
       </div>
     </header>
-    // Menu
-    <div>
+    <div> /* menu */
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="">Seating</a></li>
       <li><a href="">Admin Portal</a></li>
-      <li><a><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></a></li>
+      <li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
     </ul>
     </div>
-    //Login popup
+    /* Login popup */
     <div id="id01" class="modal">  
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="exitcontainer">
