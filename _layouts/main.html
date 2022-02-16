@@ -333,6 +333,7 @@
 </html>
 <script>
 // Get the modal
+// Get the modal
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -350,20 +351,39 @@ function menuExpand() {
   }
 };
 function loginTest() {
+  setCookie("user", "test");
+}
+document.addEventListener("DOMContentLoaded", function(){
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
-  if (x.style.display != "none" ){
-    x.style.display = "none";
+  if (getCookie("user") != ""){
     y.style.display = null;
-  }else {
+  }else{
     x.style.display = null;
-    y.style.display = "none";
   }
-}
+});
 window.addEventListener('resize', () => {
   var x = document.getElementById("myTopnav");
   if (window.innerWidth >= 630) {
     x.className = "navbar"
   }
 });
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function setCookie(cname, cvalue) {
+  document.cookie = cname + "=" + cvalue + ";";
+}
 </script>
