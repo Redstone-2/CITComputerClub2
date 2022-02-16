@@ -7,26 +7,26 @@
     <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>{{ site.title | default: site.github.repository_name }}</title>
+    <script src="https://kit.fontawesome.com/39d3485811.js" crossorigin="anonymous"></script>
 <style>
-      body {
-       font-family: 'Montserrat';font-size: 22px;
-       background-color: #132b7d;
-      }
-      #page{
-        padding: 25px;
-        background-color: #ffffff;
-        background-origin: padding-box;
-        
-      }
-      #a-title{
-        color:#233f90;
-        text-decoration: none;
-        font-family: 'Press Start 2P';font-size: 22px;
-      }
-      #a-title:hover{
-        color:#4c64a4;
-      }
-      .navbar {
+    body {
+      font-family: 'Montserrat';font-size: 22px;
+      background-color: #132b7d;
+    }
+    #page{
+      padding: 25px;
+      background-color: #ffffff;
+      background-origin: padding-box;
+    }
+    #a-title{
+      color:#233f90;
+      text-decoration: none;
+      font-family: 'Press Start 2P';font-size: 22px;
+    }
+    #a-title:hover{
+      color:#4c64a4;
+    }
+    .navbar {
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -43,9 +43,10 @@
       text-decoration: none;
     }
     #loginbutton {
-    float: right;
-    margin-right: 16px;
-    background-color: #233f90;
+      float: right;
+      margin-right: 16px;
+      background-color: #233f90;
+      cursor: pointer;
     }
     .navbar a:hover {
       background-color: #111;
@@ -166,6 +167,100 @@
        width: 100%;
     }
   }
+  iframe{
+    margin: auto;
+  }
+  #flex{
+    display: flex;
+  }
+
+  .dropdown {
+    float: right;
+    overflow: hidden;
+    margin-right: 16px;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navbar.responsive .dropdown:hover .dropdown-content {
+  display: null;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  width: 100%;
+  transform: translateY(0px)
+}
+.navbar .dropdown:hover .dropdown-content{
+  display: block;
+  float: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  transform: translateY(55px)
+}
+.navbar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 630px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar #UserOptions {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0; 
+  }
+  .navbar.responsive a, .navbar.responsive #UserOptions, .navbar.responsive #loginbutton {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+.navbar.responsive #loginbutton
+  {
+    background-color: #333;
+  }
+.navbar.responsive #loginbutton:hover {
+  background-color: #111;
+}
+}
   </style>
 
 
@@ -182,11 +277,21 @@
       </div>
     </header>
 
-    <div class="navbar">
+    <div class="navbar" id="myTopnav">
       <a href="{{ '/' | relative_url }}">Home</a>
       <a href="">Seating</a>
       <a href="">Admin Portal</a>
-      <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton">Login</a></li>
+      <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton" style="display: none;">Login</a>
+
+      <div class="dropdown" id="UserOptions" style="display: none;">
+        <a class="dropbtn">Username</a>
+        <div class="dropdown-content">
+          <a href="javascript:void(0);" onclick="deleteCookie('user')">Logout</a>
+        </div>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="menuExpand()">
+      <i class="fa fa-bars"></i>
+      </a>
     </div>
 
     <div id="id01" class="modal">  
@@ -214,6 +319,9 @@
     </div>
   </form>
 </div>
+<div id="flex">
+
+</div>
     <div class="container">
       <section id="main_content">
         {{ content }}
@@ -224,6 +332,7 @@
 </html>
 <script>
 // Get the modal
+// Get the modal
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -231,5 +340,52 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+function menuExpand() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+};
+function loginTest() {
+  setCookie("user", "test");
+}
+document.addEventListener("DOMContentLoaded", function(){
+  var x = document.getElementById("loginbutton");
+  var y = document.getElementById("UserOptions");
+  if (getCookie("user") != ""){
+    y.style.display = null;
+  }else{
+    x.style.display = null;
+  }
+});
+window.addEventListener('resize', () => {
+  var x = document.getElementById("myTopnav");
+  if (window.innerWidth >= 630) {
+    x.className = "navbar"
+  }
+});
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function setCookie(cname, cvalue) {
+  document.cookie = cname + "=" + cvalue + "; path=/;";
+}
+function deleteCookie(name) {
+ document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; 
 }
 </script>
