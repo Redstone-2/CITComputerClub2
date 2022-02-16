@@ -175,11 +175,12 @@
   }
 
   .dropdown {
-  float: left;
-  overflow: hidden;
+    float: right;
+    overflow: hidden;
+    margin-right: 16px;
 }
 
-.dropdown .dropbtn { 
+.dropdown .dropbtn {
   border: none;
   outline: none;
   color: white;
@@ -189,12 +190,11 @@
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
+
 
 .dropdown-content {
   display: none;
+  float: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
@@ -218,6 +218,46 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.navbar.responsive .dropdown:hover .dropdown-content {
+  display: block;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  width: 100%;
+}
+.navbar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 630px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar #UserOptions {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0; 
+  }
+  .navbar.responsive a, .navbar.responsive #UserOptions, .navbar.responsive #loginbutton {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+.navbar.responsive #loginbutton
+  {
+    background-color: #333;
+  }
+.navbar.responsive #loginbutton:hover {
+  background-color: #111;
+}
+}
   </style>
 
 
@@ -234,20 +274,21 @@
       </div>
     </header>
 
-    <div class="navbar">
+    <div class="navbar" id="myTopnav">
       <a href="{{ '/' | relative_url }}">Home</a>
       <a href="">Seating</a>
       <a href="">Admin Portal</a>
       <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton">Login</a>
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown 
-        </button>
+
+      <div class="dropdown" id="UserOptions" style="display: none;">
+        <a class="dropbtn">Usrname</a>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a>Logout</a>
         </div>
       </div>
+      <a href="javascript:void(0);" class="icon" onclick="menuExpand()">
+      <i class="fa fa-bars"></i>
+      </a>
     </div>
 
     <div id="id01" class="modal">  
@@ -276,7 +317,8 @@
   </form>
 </div>
 <div id="flex">
-<iframe src="https://calendar.google.com/calendar/embed?src=g7c03evcihdm1pi4lc2l4bv7dk%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+  <button onclick="loginTest()">Login test</button>
 </div>
     <div class="container">
       <section id="main_content">
@@ -295,5 +337,24 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+function menuExpand() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+};
+function loginTest() {
+  var x = document.getElementById("loginbutton");
+  var y = document.getElementById("UserOptions");
+  if (x.style.display != "none" ){
+    x.style.display = "none";
+    y.style.display = null;
+  }else {
+    x.style.display = null;
+    y.style.display = "none";
+  }
 }
 </script>
