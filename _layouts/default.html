@@ -279,14 +279,15 @@
 
     <div class="navbar" id="myTopnav">
       <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="">Seating</a>
-      <a href="">Admin Portal</a>
+      <a href="groups.html">Groups</a>
+      <a href="seating.html">Seating</a>
+      <a href="admin.html">Admin Portal</a>
       <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton" style="display: none;">Login</a>
 
       <div class="dropdown" id="UserOptions" style="display: none;">
         <a class="dropbtn">Username</a>
         <div class="dropdown-content">
-          <a href="javascript:void(0);" onclick="deleteCookie('user')">Logout</a>
+          <a href="javascript:void(0);" onclick="logout()">Logout</a>
         </div>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="menuExpand()">
@@ -319,9 +320,7 @@
     </div>
   </form>
 </div>
-<div id="flex">
 
-</div>
     <div class="container">
       <section id="main_content">
         {{ content }}
@@ -351,6 +350,7 @@ function menuExpand() {
 };
 function loginTest() {
   setCookie("user", "test");
+  location.reload();
 }
 document.addEventListener("DOMContentLoaded", function(){
   var x = document.getElementById("loginbutton");
@@ -387,5 +387,9 @@ function setCookie(cname, cvalue) {
 }
 function deleteCookie(name) {
  document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; 
+}
+function logout() {
+  deleteCookie('user')
+  location.reload();
 }
 </script>
