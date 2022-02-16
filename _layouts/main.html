@@ -281,12 +281,12 @@
       <a href="{{ '/' | relative_url }}">Home</a>
       <a href="">Seating</a>
       <a href="">Admin Portal</a>
-      <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton">Login</a>
+      <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton" style="display: none;">Login</a>
 
       <div class="dropdown" id="UserOptions" style="display: none;">
         <a class="dropbtn">Username</a>
         <div class="dropdown-content">
-          <a>Logout</a>
+          <a href="javascript:void(0);" onclick="deleteCookie('user')">Logout</a>
         </div>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="menuExpand()">
@@ -384,6 +384,9 @@ function getCookie(cname) {
   return "";
 }
 function setCookie(cname, cvalue) {
-  document.cookie = cname + "=" + cvalue + ";";
+  document.cookie = cname + "=" + cvalue + "; path=/;";
+}
+function deleteCookie(name) {
+ document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; 
 }
 </script>
