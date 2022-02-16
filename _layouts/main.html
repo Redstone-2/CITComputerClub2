@@ -279,8 +279,8 @@
 
     <div class="navbar" id="myTopnav">
       <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="">Seating</a>
-      <a href="">Admin Portal</a>
+      <a href="{{ site.seating | default: seating.}}.html">Seating</a>
+      <a href="{{ site.admin | default: admin}}.html">Admin Portal</a>
       <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton" style="display: none;">Login</a>
 
       <div class="dropdown" id="UserOptions" style="display: none;">
