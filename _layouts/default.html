@@ -285,7 +285,7 @@
       <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton" style="display: none;">Login</a>
 
       <div class="dropdown" id="UserOptions" style="display: none;">
-        <a class="dropbtn">Username</a>
+        <a class="dropbtn" id="usrname">Username</a>
         <div class="dropdown-content">
           <a href="javascript:void(0);" onclick="logout()">Logout</a>
         </div>
@@ -303,7 +303,7 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="name" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
@@ -320,7 +320,6 @@
     </div>
   </form>
 </div>
-
     <div class="container">
       <section id="main_content">
         {{ content }}
@@ -330,11 +329,9 @@
   </body>
 </html>
 <script>
-// Get the modal
-// Get the modal
+
 var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -355,10 +352,11 @@ function loginTest() {
 document.addEventListener("DOMContentLoaded", function(){
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
-  var z = getCookie("user")
-  if (z != ""){
+  var z = document.getElementById("usrname");
+  var a = getCookie("user")
+  if (a != ""){
     y.style.display = null;
-    y.innerHTML = "<p>"+z+"<p>";
+    z.innerHTML = a;
   }else{
     x.style.display = null;
   }
