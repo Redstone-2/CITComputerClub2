@@ -303,7 +303,7 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="name" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
@@ -355,8 +355,10 @@ function loginTest() {
 document.addEventListener("DOMContentLoaded", function(){
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
-  if (getCookie("user") != ""){
+  var z = getCookie("user")
+  if (z != ""){
     y.style.display = null;
+    7.innerHTML = "<p>"+z+"<p>";
   }else{
     x.style.display = null;
   }
