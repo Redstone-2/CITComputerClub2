@@ -285,7 +285,7 @@
       <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton" style="display: none;">Login</a>
 
       <div class="dropdown" id="UserOptions" style="display: none;">
-        <a class="dropbtn">Username</a>
+        <a class="dropbtn" id="usrname">Username</a>
         <div class="dropdown-content">
           <a href="javascript:void(0);" onclick="logout()">Logout</a>
         </div>
@@ -356,10 +356,11 @@ function loginTest() {
 document.addEventListener("DOMContentLoaded", function(){
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
-  var z = getCookie("user")
-  if (z != ""){
+  var z = document.getElementById("usrname");
+  var a = getCookie("user")
+  if (a != ""){
     y.style.display = null;
-    y.innerHTML = z;
+    z.innerHTML = a;
   }else{
     x.style.display = null;
   }
