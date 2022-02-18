@@ -1,1 +1,3 @@
 https://mrredstone2.github.io/CITComputerClub2/
+
+AWS API GATEWAY ENDPOINT: https://bgsi7cb8n3.execute-api.us-east-1.amazonaws.com/default/Test
