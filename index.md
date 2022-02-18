@@ -1,4 +1,4 @@
 ---
 layout: main
 ---
-computer club
+# Blog posts here
