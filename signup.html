@@ -2,9 +2,16 @@
 layout: default
 ---
 <html>
+  <head>
+    <style>
+      body {visibility:hidden;}
+      .print {visibility:visible;}
+    </style>
+  </head>
   <body>
+    <button onclick="window.print();return false;">Print</button>
     <a href="https://raw.githubusercontent.com/Mrredstone2/CITComputerClub2/ca252fe9be14a9db89bf37ebbc76e26d6556e688/Computer%20Club%202020-2021%20Application.pdf"><button><i class="fa-solid fa-file-arrow-down"></i>Download PDF</button></a>
-    <img id="ccform" src="https://raw.githubusercontent.com/Mrredstone2/CITComputerClub2/main/appliaction.jpg" alt="Sign up form" style="display: block; margin-left: auto; margin-right: auto; width: 70%;">
+    <img id="ccform" class="print" src="https://raw.githubusercontent.com/Mrredstone2/CITComputerClub2/main/appliaction.jpg" alt="Sign up form" style="display: block; margin-left: auto; margin-right: auto; width: 70%;">
   </body>
 </html>
 
