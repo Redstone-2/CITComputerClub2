@@ -304,7 +304,6 @@
       <a href="groups.html">Groups</a>
       <a href="attendance.html">Attendance</a>
       <a href="signup.html">Sign Up</a>
-      <a href="admin.html">Admin Portal</a>
       <div class="caldropdown" id="calanderdrop">
         <a href="javascript:void(0);" onclick="calclick()" class="dropbtn" id="Calander-button">Calender</a>
       </div>
@@ -314,6 +313,7 @@
         <a class="dropbtn" id="usrname">Username</a>
         <div class="dropdown-content">
           <a href="javascript:void(0);" onclick="logout()">Logout</a>
+          <a id="adminlink" href="admin.html" style="displat: none;">Admin Portal</a>
         </div>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="menuExpand()">
@@ -383,13 +383,18 @@ function load(){
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
   var z = document.getElementById("usrname");
+  var a = getCookie("user");
+  var b = document.getElementById("adminlink");
+  var c getCookie("isAdmin");
   
-  var a = getCookie("user")
   if (a != ""){
     y.style.display = null;
     z.innerHTML = a;
   }else{
     x.style.display = null;
+  };
+  if (c =="true"){
+    b.style.display = null;
   }
 };
 window.addEventListener('resize', () => {
@@ -417,10 +422,12 @@ function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + "; path=/;";
 }
 function deleteCookie(name) {
- document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; 
+ document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+ document.cookie = name+"=; expires+Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 function logout() {
-  deleteCookie('user')
+  deleteCookie('user');
+  deleteCookie('admin');
   location.reload();
 }
  
