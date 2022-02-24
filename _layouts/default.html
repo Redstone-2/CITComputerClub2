@@ -385,7 +385,7 @@ function load(){
   var z = document.getElementById("usrname");
   var a = getCookie("user");
   var b = document.getElementById("adminlink");
-  var c getCookie("isAdmin");
+  var c = getCookie("isAdmin");
   
   if (a != ""){
     y.style.display = null;
@@ -393,7 +393,7 @@ function load(){
   }else{
     x.style.display = null;
   };
-  if (c =="true"){
+  if (c == "true"){
     b.style.display = null;
   }
 };
@@ -423,7 +423,6 @@ function setCookie(cname, cvalue) {
 }
 function deleteCookie(name) {
  document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
- document.cookie = name+"=; expires+Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 function logout() {
   deleteCookie('user');
