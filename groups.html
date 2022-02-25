@@ -3,23 +3,38 @@ layout: default
 ---
 <head>
 <style>
-.grid {
+ .grid-outer {
+   display: grid;
+   grid-template-colums: auto;
+ }
+.grid-inner {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-areas: 
+     'title title'
+     'photo blurb';
   grid-gap: 10px;
   padding: 10px;
 }
-.grid > div {
+.grid-inner > div {
   text-align: left;
   padding: 20px 0;
-}      
+}
+ .title {grid-area: title;}
+ .photo {grid-area: photo;}
+ .blurb {grid-area: blurb;}
 </style>
 </head>
 <body>
-  <div class="grid">
-    <div>filler text</div>
-    <div>filler text</div>
-    <div>filler text</div>
-    <div>filler text</div>
+  <div class="grid-outer">
+  <div class="grid-inner">
+    <div class="title">Group Name</div>
+    <div class"photo">Image Here</div>
+    <div class="blurb">Blurb here</div>
+  </div>
+  <div class="grid-inner">
+    <div class="title">Group Name</div>
+    <div class"photo">Image Here</div>
+    <div class="blurb">Blurb here</div>
+  </div>
   </div>
 </body>
