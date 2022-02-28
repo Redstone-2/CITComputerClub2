@@ -339,7 +339,7 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required id="psw">
         
-      <button class = "submit" type="submit">Login</button>
+      <button class = "submit" type="button" onClick="submit(this.form);">Login</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -444,6 +444,10 @@ function calclick(){
   } else{
     x.style.display= "none";
   }
+}
+function submit (form) {
+    var Usrname = form.uname.value.replace('<'||'>'||'/', '');
+    var Password = form.psw.value.replace('<'||'>'||'/', '');
 }
 console.log("loaded");
 </script>
