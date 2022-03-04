@@ -39,7 +39,6 @@ layout: default
   var x = document.getElementById("message");
   var popup = document.getElementById("alert");
   function getLocation() {
-    alert("run 0");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
   } else { 
@@ -48,7 +47,6 @@ layout: default
   popup.style.display='block';
 }
 function showPosition(position) {
-  alert("run 2");
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
