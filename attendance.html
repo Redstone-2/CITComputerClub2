@@ -8,7 +8,7 @@ layout: default
   padding: 20px;
   background-color: #f44336;
   color: white;
-  display= none;
+  display: none;
 }
 
 .closebtn {
@@ -28,7 +28,7 @@ layout: default
 </style>
   </head>
   <body>
-    <button href="javascript:void(0);" onclick="getLocation();">Check Attendence</button>
+    <button href="javascript:void(0);" onclick="getLocation()">Check Attendence</button>
     <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
       <p="message"></p>
@@ -45,10 +45,29 @@ layout: default
     x.innerHTML = "Geolocation is not supported by this browser.";
     alert.style.display='block';
   }
-};
+}
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
   alert.style.display='block';
 }
+  function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      alert.style.display='block';
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      alert.style.display='block';
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      alert.style.display='block';
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      alert.style.display='block';
+      break;
+  }
 </script>
