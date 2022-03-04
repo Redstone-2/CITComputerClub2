@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<html>
+  <head>
+    <style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  display= none;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+  </head>
+  <body>
+    <button>Check Attendence</button>
+    <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <p="message"></p>
+</div>
+  </body>
+</html>
+<script>
+  var x = document.getElementById("message");
+  var alert = document.getElementById("alert");
+  function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+    alert.style.display='block';
+  }
+};
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+  alert.style.display='block';
+}
+</script>
