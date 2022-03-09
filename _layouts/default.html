@@ -327,7 +327,7 @@
     </div>
 
     <div id="id01" class="modal">  
-  <form class="modal-content animate" action="https://bgsi7cb8n3.execute-api.us-east-1.amazonaws.com/default/Test" method="post" id="loginForm">
+  <form class="modal-content animate" id="loginForm">
     <div class="exitcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -339,7 +339,7 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" enctype="multipart/form-data" placeholder="Enter Password" name="psw" required id="psw">
         
-      <button class = "submit" type="submit">Login</button>
+      <button class = "submit" type="submit" id = "submit">Login</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -449,6 +449,9 @@ function submit (form) {
     var Usrname = form.uname.value.replace('<'||'>'||'/', '');
     var Password = form.psw.value.replace('<'||'>'||'/', '');
 }
+addEventListener("submit", (evt) => {
+  evt.preventDefault();
+});
 console.log("loaded");
 </script>
 <noscript>
