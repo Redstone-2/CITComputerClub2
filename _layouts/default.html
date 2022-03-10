@@ -445,14 +445,10 @@ function calclick(){
     x.style.display= "none";
   }
 }
-function submit (form) {
-    var Usrname = form.uname.value.replace('<'||'>'||'/', '');
-    var Password = form.psw.value.replace('<'||'>'||'/', '');
-}
 addEventListener("submit", (evt) => {
   evt.preventDefault();
-  var usrname= document.getElementById("usrName").value;
-  var psw= document.getElementById("psw").value;
+  var Usrname = form.uname.value.replace('<'||'>'||'/', '');
+  var Password = form.psw.value.replace('<'||'>'||'/', '');
 });
 console.log("loaded");
 </script>
