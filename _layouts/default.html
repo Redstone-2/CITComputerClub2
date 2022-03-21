@@ -450,23 +450,6 @@ addEventListener("submit", (evt) => {
   var Usrname = form.uname.value.replace('<'||'>'||'/', '');
   var Password = form.psw.value.replace('<'||'>'||'/', '');
 });
-function onLoad(){
-  try{
-      alert("trigger");
-      var user = getCookie("user");
-      alert("cookie");
-      var cookie = text.split(",");
-      for (var i = 0; i < cookie.length; i++){
-        cookie[i] = atob(cookie[i]);
-      }
-      if (cookie[1].includes("Admin: True")){
-          return;
-       }
-   }
-  catch(err){
-    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
-  }
-    }
 console.log("loaded");
 </script>
 <noscript>
