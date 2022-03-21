@@ -397,9 +397,7 @@ function load(){
   }
   if (window.location.href.indexOf("admin") > -1) {
     try{
-      alert("trigger");
       var user = getCookie("user");
-      alert("cookie");
       var cookie = text.split(",");
       for (var i = 0; i < cookie.length; i++){
         cookie[i] = atob(cookie[i]);
