@@ -384,13 +384,11 @@ function load(){
   var z = document.getElementById("usrname");
   var a = getCookie("user");
   var b = document.getElementById("adminlink");
-  try{
+
     var user = getCookie("user");
         var cookie = text.split(",");
         for (var i = 0; i < cookie.length; i++){
          cookie[i] = atob(cookie[i]);
-       }
-    catch(err){}
   }
   
   if (a != ""){
