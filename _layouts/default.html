@@ -384,7 +384,13 @@ function load(){
   var z = document.getElementById("usrname");
   var a = getCookie("user");
   var b = document.getElementById("adminlink");
-  var c = getCookie("isAdmin");
+  try{
+    var user = getCookie("user");
+        var cookie = text.split(",");
+        for (var i = 0; i < cookie.length; i++){
+         cookie[i] = atob(cookie[i]);
+       }
+  }
   
   if (a != ""){
     y.style.display = null;
@@ -392,18 +398,11 @@ function load(){
   }else{
     x.style.display = null;
   };
-  if (c == "true"){
-    b.style.display = null;
-  }
   if (window.location.href.indexOf("admin") > -1) {
     try{
-      var user = getCookie("user");
-      var cookie = text.split(",");
-      for (var i = 0; i < cookie.length; i++){
-        cookie[i] = atob(cookie[i]);
-      }
       if (cookie[1].includes("Admin: True")){
           return;
+          b.style.display = null;
        }
    }
   catch(err){
