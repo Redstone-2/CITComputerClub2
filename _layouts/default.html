@@ -8,6 +8,24 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>{{ site.title | default: site.github.repository_name }}</title>
     <script src="https://kit.fontawesome.com/39d3485811.js" crossorigin="anonymous"></script>
+    <script>
+  var a = getCookie("user");
+      
+    var user = getCookie("user");
+        var cookie = user.split(",");
+        for (var i = 0; i < cookie.length; i++){
+         cookie[i] = atob(cookie[i]);
+        }
+  if (window.location.href.indexOf("admin") > -1) {
+    try{
+      if (!cookie[1].includes("Admin: True")){
+    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
+       }
+        catch(err){
+    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
+  }
+    }
+    </script>
     <style>
       body {
           font-family: 'Montserrat';font-size: 22px;
