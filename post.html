@@ -2,10 +2,21 @@
 layout: default
 permalink: //post
 ---
+<style>
+  textarea #post-title{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: vertical;
+}
+</style>
 <h2>Post</h2>
 <p4>Title:</p4>
   <input type="text" id="post-title"><br>
-<p4>Body:</p4>
+<p4>Body:</p4><br>
 <textarea id="post-body"></textarea><br><br>
 <button type="button" id="post">Post</button>
 </form> 
