@@ -24,7 +24,7 @@
   }
   return "";
 }
-      
+ try{     
   var a = getCookie("user");
       
     var user = getCookie("user");
@@ -33,7 +33,6 @@
          cookie[i] = atob(cookie[i]);
         }
   if (window.location.href.indexOf("admin") > -1) {
-    try{
       if (!cookie[1].includes("Admin: True")){
     window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
        }
@@ -415,6 +414,7 @@ function loginTest() {
   location.reload();
 }
 function load(){
+    try{
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
   var z = document.getElementById("usrname");
@@ -435,7 +435,6 @@ function load(){
     x.style.display = null;
   };
   if (window.location.href.indexOf("admin") > -1) {
-    try{
       if (cookie[1].includes('"admin": "true"')){
           return;
           b.style.display = null;
