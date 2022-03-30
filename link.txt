@@ -11,3 +11,6 @@ Digital Ocean Mongodb: mongodb+srv://doadmin:E7l1Zcz9j0x6o523@mongodbcomputerclu
             host = mongodb+srv://mongodbcomputerclubteam2-41c26618.mongo.ondigitalocean.com
             port = 27017
             database = admin
+
+
+DigitalOcean Droplet Password: 123SECRET 
