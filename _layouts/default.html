@@ -33,12 +33,14 @@
          cookie[i] = atob(cookie[i]);
         }
   if (window.location.href.indexOf("admin") > -1) {
+    alert("Bad token");
       if (!cookie[1].includes("Admin: True")){
     window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
        }
     }
  }
         catch(err){
+          alert("token error");
           if (window.location.href.indexOf("admin") > -1) {
     window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
           }
@@ -444,6 +446,7 @@ function load(){
    }
     }
   catch(err){
+    alert("token error");
     if (window.location.href.indexOf("admin") > -1) {
     window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
           }  
