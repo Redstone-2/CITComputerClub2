@@ -29,7 +29,7 @@
       
     var user = getCookie("user");
         var cookie = user.split(",");
-        for (var i = 0; i < cookie.length; i++){
+        for (var i = 0; i < cookie.length-1; i++){
           alert(cookie[i]);
          cookie[i] = atob(cookie[i]);
         }
