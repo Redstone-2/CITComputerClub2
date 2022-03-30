@@ -395,7 +395,7 @@ function menuExpand() {
   }
 };
 function loginTest() {
-  setCookie("user", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6InRydWUiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.ijeXj-GMK8HdRFMD_TKl4LW9hvvlsDtkNCmHYPp1Xb0");
+  setCookie("user", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6InRydWUiLCJuYWlIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.ijeXj-GMK8HdRFMD_TKl4LW9hvvlsDtkNCmHYPp1Xb0");
   location.reload();
 }
 function load(){
@@ -412,7 +412,8 @@ function load(){
   }
   
   if (a != ""){
-    y.style.display = block;
+    y.style.display = true;
+    cookie[1].indexOf
     z.innerHTML = a;
   }else{
     x.style.display = null;
