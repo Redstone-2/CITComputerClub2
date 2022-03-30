@@ -412,7 +412,7 @@ function load(){
   }
   
   if (a != ""){
-    y.style.display = null;
+    y.style.display = block;
     z.innerHTML = a;
   }else{
     x.style.display = null;
@@ -458,7 +458,6 @@ function deleteCookie(name) {
 }
 function logout() {
   deleteCookie('user');
-  deleteCookie('admin');
   location.reload();
 }
  
