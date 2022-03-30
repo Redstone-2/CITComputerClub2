@@ -395,7 +395,7 @@ function menuExpand() {
   }
 };
 function loginTest() {
-  setCookie("user", "test");
+  setCookie("user", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6InRydWUiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.ijeXj-GMK8HdRFMD_TKl4LW9hvvlsDtkNCmHYPp1Xb0");
   location.reload();
 }
 function load(){
@@ -406,7 +406,7 @@ function load(){
   var b = document.getElementById("adminlink");
 
     var user = getCookie("user");
-        var cookie = user.split(",");
+        var cookie = user.split(".");
         for (var i = 0; i < cookie.length; i++){
          cookie[i] = atob(cookie[i]);
   }
@@ -419,7 +419,7 @@ function load(){
   };
   if (window.location.href.indexOf("admin") > -1) {
     try{
-      if (cookie[1].includes("Admin: True")){
+      if (cookie[1].includes('"admin": "true"')){
           return;
           b.style.display = null;
        }
