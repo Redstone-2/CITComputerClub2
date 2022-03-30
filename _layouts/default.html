@@ -34,16 +34,16 @@
         }
   if (window.location.href.indexOf("admin") > -1) {
     alert("Bad token");
-      if (!cookie[1].includes("Admin: True")){
-    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
-       }
+     // if (!cookie[1].includes("Admin: True")){
+   // window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
+     //  }
     }
  }
         catch(err){
           alert("token error");
-          if (window.location.href.indexOf("admin") > -1) {
-    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
-          }
+       //   if (window.location.href.indexOf("admin") > -1) {
+  //  window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
+     //     }
   }
     </script>
     <style>
@@ -446,10 +446,10 @@ function load(){
    }
     }
   catch(err){
-    alert("token error");
-    if (window.location.href.indexOf("admin") > -1) {
-    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
-          }  
+    alert("token error catch 2");
+  //  if (window.location.href.indexOf("admin") > -1) {
+//    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
+//          }  
       }
   }
 window.addEventListener('resize', () => {
