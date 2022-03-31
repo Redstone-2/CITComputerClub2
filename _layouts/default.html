@@ -9,7 +9,7 @@
     <title>{{ site.title | default: site.github.repository_name }}</title>
     <script src="https://kit.fontawesome.com/39d3485811.js" crossorigin="anonymous"></script>
     <script>
-      function getCookie(cname) {
+/*      function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
@@ -47,6 +47,7 @@
   //  window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
      //     }
  // }
+ */
     </script>
     <style>
       body {
@@ -420,7 +421,7 @@ function loginTest() {
   location.reload();
 }
 function load(){
-    try{
+  //  try{
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
   var z = document.getElementById("usrname");
@@ -446,13 +447,13 @@ function load(){
           b.style.display = null;
        }
    }
-    }
-  catch(err){
-    alert("token error catch 2");
+  //  }
+ // catch(err){
+  //  alert("token error catch 2");
   //  if (window.location.href.indexOf("admin") > -1) {
 //    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/index.html");
 //          }  
-      }
+  //    }
   }
 window.addEventListener('resize', () => {
   var x = document.getElementById("calander-dropdown");
