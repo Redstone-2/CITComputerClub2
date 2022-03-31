@@ -431,11 +431,11 @@ function load(){
     var user = getCookie("user");
         var cookies = user.split(".");
          var cookie = atob(cookies[1]);
-  }
+  
   
   if (a != ""){
     y.style.display = true;
-    var name = cookie.substring(cookie.indexOf("user")+8, cookie.indexof('"',cookie.indexOf("user")+9));
+    var name = JSON.parse(cookie)["name"];
     alert(name);
     z.innerHTML = name;
   }else{
