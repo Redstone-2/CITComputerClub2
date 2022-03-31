@@ -417,7 +417,7 @@ function menuExpand() {
   }
 };
 function loginTest() {
-  setCookie("user", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6InRydWUiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.ijeXj-GMK8HdRFMD_TKl4LW9hvvlsDtkNCmHYPp1Xb0");
+  setCookie("user", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGaXJzdF9uYW1lIjoiSm9obiIsIlVzZXJfVHlwZSI6IkFETUlOIiwiVG9rZW4iOiIxMTA0QVk0NkEifQ.-2BZmRlrWR2s-jkoezT7VuizefUb8U8aNiWYXY1hxnM");
   location.reload();
 }
 function load(){
@@ -433,10 +433,10 @@ function load(){
     var cookie = atob(cookies[1]);
       
     y.style.display = null;
-    var name = JSON.parse(cookie)["name"];
+    var name = JSON.parse(cookie)["First_name"];
     z.innerHTML = name;
       
-    if (JSON.parse(cookie["admin"].equals("true"))){  
+    if (JSON.parse(cookie["User_Type"] =="ADMIN")){  
       b.style.display = null;
    }else if (window.location.href.indexOf("admin") > -1){
      window.location.replace("https://mrredstone2.github.io/CITComputerClub2/home");
