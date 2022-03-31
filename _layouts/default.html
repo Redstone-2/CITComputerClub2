@@ -421,7 +421,7 @@ function loginTest() {
   location.reload();
 }
 function load(){
-//    try{
+    try{
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
   var z = document.getElementById("usrname");
@@ -431,8 +431,6 @@ function load(){
     var user = getCookie("user");
     var cookies = user.split(".");
     var cookie = atob(cookies[1]);
-  alert(cookie);
-  alert(JSON.parse(cookie)["First_name"]);
       
     y.style.display = null;
     var name = JSON.parse(cookie)["First_name"];
@@ -443,13 +441,13 @@ function load(){
    }else if (window.location.href.indexOf("admin") > -1){
      window.location.replace("https://mrredstone2.github.io/CITComputerClub2/home");
    }
-/*    }
+    }
   catch(err){
     x.style.display = null;
     if (window.location.href.indexOf("admin") > -1) {
     window.location.replace("https://mrredstone2.github.io/CITComputerClub2/home");
           }  
-      }*/
+      }
   }
 window.addEventListener('resize', () => {
   var x = document.getElementById("calander-dropdown");
