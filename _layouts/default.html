@@ -390,7 +390,8 @@
   </form>
 </div>
 <div class="flex">
-  <button onclick="loginTest()">Login test</button>
+  <button onclick="loginTest()">Login test(admin)</button>
+  <button onclick="loginUserTest()">Login test(user)</button>
 </div>
     <div class="container">
       <section id="main_content">
@@ -417,18 +418,21 @@ function menuExpand() {
   }
 };
 function loginTest() {
-  setCookie("user", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGaXJzdF9uYW1lIjoiSm9obiIsIlVzZXJfVHlwZSI6IkFETUlOIiwiVG9rZW4iOiIxMTA0QVk0NkEifQ.Bj8_tMhJUn9A42AP3t_iE76fR9bCT4JHrl6KDNXxh1U");
+  setCookie("User", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGaXJzdF9uYW1lIjoiSm9obiIsIlVzZXJfVHlwZSI6IkFETUlOIiwiVG9rZW4iOiIxMTA0QVk0NkEifQ.Bj8_tMhJUn9A42AP3t_iE76fR9bCT4JHrl6KDNXxh1U");
   location.reload();
 }
+  function loginUserTest(){
+    setCookie("User", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGaXJzdF9uYW1lIjoiSm9lIiwiVXNlcl9UeXBlIjoiVVNFUiIsIlRva2VuIjoiMTEwNEE2NDZBIn0.M6l4Xyk5rdbSHZEmh6-sz7b-bzO4vkrTXEjNTqzFgNM");
+    location.reload();
+  }
 function load(){
     try{
   var x = document.getElementById("loginbutton");
   var y = document.getElementById("UserOptions");
   var z = document.getElementById("usrname");
-  var a = getCookie("user");
   var b = document.getElementById("adminlink");
 
-    var user = getCookie("user");
+    var user = getCookie("User");
     var cookies = user.split(".");
     var cookie = atob(cookies[1]);
       
@@ -477,7 +481,7 @@ function deleteCookie(name) {
  document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 function logout() {
-  deleteCookie('user');
+  deleteCookie('User');
   location.reload();
 }
  
