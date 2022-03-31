@@ -431,12 +431,14 @@ function load(){
     var user = getCookie("user");
     var cookies = user.split(".");
     var cookie = atob(cookies[1]);
+  alert(cookie);
+  alert(JSON.parse(cookie)["First_name"]);
       
     y.style.display = null;
     var name = JSON.parse(cookie)["First_name"];
     z.innerHTML = name;
       
-    if (JSON.parse(cookie["User_Type"] =="ADMIN")){  
+    if (JSON.parse(cookie)["User_Type"] =="ADMIN"){  
       b.style.display = null;
    }else if (window.location.href.indexOf("admin") > -1){
      window.location.replace("https://mrredstone2.github.io/CITComputerClub2/home");
