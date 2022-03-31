@@ -441,11 +441,10 @@ function load(){
   }else{
     x.style.display = null;
   };
-  if (window.location.href.indexOf("admin") > -1) {
-      if (cookie.includes('"admin": "true"')){
-          return;
-          b.style.display = null;
-       }
+      if (cookie.includes('"admin": "true"')){  
+        b.style.display = null;
+   }else if (window.location.href.indexOf("admin") > -1){
+     window.location.replace("https://mrredstone2.github.io/CITComputerClub2/home");
    }
     }
   catch(err){
