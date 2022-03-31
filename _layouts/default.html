@@ -435,8 +435,9 @@ function load(){
   
   if (a != ""){
     y.style.display = true;
-    cookie.substring(cookie.indexOf("user")+8, cookie.indexof('"',cookie.indexOf("user")+9));
-    z.innerHTML = a;
+    var name = cookie.substring(cookie.indexOf("user")+8, cookie.indexof('"',cookie.indexOf("user")+9));
+    alert(name);
+    z.innerHTML = name;
   }else{
     x.style.display = null;
   };
