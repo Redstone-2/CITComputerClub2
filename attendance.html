@@ -53,7 +53,7 @@ function showPosition(position) {
                            body: JSON.stringify({"Longitude": position.coords.longitude,
                                                  "Latitude": position.coords.latitude}),
                            headers: {'Content-Type': 'application/json',
-                                      'Accept': 'application/json'}}).then(function(response), {})
+                                      'Accept': 'application/json'}})
 }
   function showError(error) {
   switch(error.code) {
