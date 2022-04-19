@@ -49,7 +49,11 @@ layout: default
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
-  fetch("68.183.115.192", {method: "POST", body: JSON.stringify({"Longitude": position.coords.longitude,"Latitude": position.coords.latitude}, headers: {'Content-Type': 'application/json'})})
+  fetch("68.183.115.192", {method: "POST", 
+                           body: JSON.stringify({"Longitude": position.coords.longitude,
+                                                 "Latitude": position.coords.latitude}),
+                           headers: {'Content-Type': 'application/json',
+                                      'Accept': 'application/json'}}).then(function(response), {})
 }
   function showError(error) {
   switch(error.code) {
