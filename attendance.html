@@ -49,7 +49,7 @@ layout: default
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
-  fetch("http://68.183.115.192", {method: "POST", 
+  fetch("https://68.183.115.192", {method: "POST", 
                            body: JSON.stringify({"Longitude": position.coords.longitude,
                                                  "Latitude": position.coords.latitude}),
                            headers: {'Content-Type': 'application/json',
