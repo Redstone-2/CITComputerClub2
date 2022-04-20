@@ -440,7 +440,7 @@ var inputUser = document.getElementById("usrName");
 var inputPsw = document.getElementById("psw");
 document.getElementById("loginForm").addEventListener('submit', event => {
   event.preventDefault()
-  const data = JSON.stringify({usrname: inputUser.value.replace(/<|>|;|"|\\|'|-|{|}|:/gi, ""), pw: inputPsw.value.replace(/<|>|;|"|\\|'|-|{|}|:/gi, "")});
+  const data = JSON.stringify({usrname: inputUser.value.replace(/<|>|;|"|\\|'|{|}|:/gi, ""), pw: inputPsw.value.replace(/<|>|;|"|\\|'|{|}|:/gi, "")});
 })
 function calclick(){
   var x = document.getElementById("calander-dropdown");
