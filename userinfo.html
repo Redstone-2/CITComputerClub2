@@ -27,6 +27,7 @@ layout: default
  async function getUserData() {
     try {
         let res = await fetch("68.183.115.192:443/login", {method: "GET"});
+        console.log(res);
         return await res.json();
     } catch (error) {
         console.log(error);
