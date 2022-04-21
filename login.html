@@ -20,9 +20,12 @@ layout: default
 </html>
 <script>
   function sendData(){
+      evt.preventDefault();
+      var Usrname = form.uname.value.replace('<'||'>'||'/', '');
+      var Password = form.psw.value.replace('<'||'>'||'/', '');
       alert(fetch("https://68.183.112.1/main.go", {method: "POST", 
-                           body: JSON.stringify({"email": document.getElementById("usrName").value,
-                                                 "password": document.getElementById("psw").value}),
+                           body: JSON.stringify({"email": Usrname,
+                                                 "password": Password),
                            headers: {'Content-Type': 'application/json',
                                       'Accept': 'application/json'}}))
   }
