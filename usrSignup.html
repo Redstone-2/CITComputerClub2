@@ -23,8 +23,20 @@ permalink: /admin/signup
   </form>
 </body>
 <script>
-fetch("https://68.183.112.1/main.go", {method: "POST", 
+function makeUsr(){
+  
+var form = document.getElementById("loginForm");
+var fmane = form.fname.value;
+var lname = form.lname.value; 
+var email = form.email.value;
+var cshs = form.email.value;
+var admin = form.email.value;
+  
+  alert(cshs);
+
+/*fetch("https://68.183.112.1/main.go", {method: "POST", 
                            body: JSON.stringify({  }),
                            headers: {'Content-Type': 'application/json',
-                                      'Accept': 'application/json'}})
+                                      'Accept': 'application/json'}})*/
+}
 </script>
