@@ -24,5 +24,18 @@ layout: default
     
   </form>
 <script>
- fetch("68.183.115.192:443/login", {method: "GET"})
+ var response = await fetch("68.183.115.192:443/login", {method: "GET"})
+ var data = await response.json();
+ 
+ document.getElementById("fname").value = data.first_name;
+ document.getElementById("lname").value = data.last_name;
+ document.getElementById("email").value = data.email;
+ document.getElementById("pswor").value = data.psw;
+ if (data.cshs = "CSHS_Member"){
+ document.getElementById("cshs").checked = true
+ }
+ if (data.user_type = "ADMIN"){
+ document.getElementById("admin").checked = true
+ }
+ 
 </script>
