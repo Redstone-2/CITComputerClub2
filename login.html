@@ -4,8 +4,8 @@ layout: default
   <form class="modal-content" id="loginForm">
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" enctype="multipart/form-data" placeholder="Enter Username" name="uname" id="usrName"required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" enctype="multipart/form-data" placeholder="Enter Email" name="email" id="email"required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" enctype="multipart/form-data" placeholder="Enter Password" name="psw" required id="psw">
@@ -16,10 +16,10 @@ layout: default
 <script>
   function sendData(){
       evt.preventDefault();
-      var Usrname = form.uname.value.replace('<'||'>'||'/', '');
+      var Email = form.email.value.replace('<'||'>'||'/', '');
       var Password = form.psw.value.replace('<'||'>'||'/', '');
       alert(fetch("https://68.183.112.1/users/login", {method: "POST", 
-                           body: JSON.stringify({"email": Usrname,
+                           body: JSON.stringify({"email": Email,
                                                  "password": Password),
                            headers: {'Content-Type': 'application/json',
                                       'Accept': 'application/json'}}))
