@@ -24,8 +24,8 @@ layout: default
     
   </form>
 <script>
- var response = await fetch("68.183.115.192:443/login", {method: "GET"})
- var data = await response.json();
+ var response = Promise.resolve(fetch("68.183.115.192:443/login", {method: "GET"}));
+ var data = Promise.resolve(response.json());
  
  document.getElementById("fname").value = data.first_name;
  document.getElementById("lname").value = data.last_name;
