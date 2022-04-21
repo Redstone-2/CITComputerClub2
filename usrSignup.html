@@ -14,10 +14,12 @@ permalink: /admin/signup
     <input type="text" placeholder="Email" name="email" id="email" required>
     
     <label for="cshs"><b>Part of CSHS</b></label>
-    <input type="checkbox" name="cshs" id="cshs">
+    <input type="radio" name="cshs" id="cshs" value="TRUE">
+    <input type="radio" name="cshs" id="cshs" value="FALSE">
     
     <label for="admin"><b>Has Admin Privileges</b></label>
-    <input type="checkbox" name="admin" id="admin">
+    <input type="checkbox" name="admin" id="admin" value="TRUE">
+    <input type="checkbox" name="admin" id="admin" value="FALSE">
     
   </form>
       <button onclick="makeUsr()">Create User</button>
