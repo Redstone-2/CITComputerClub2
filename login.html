@@ -19,7 +19,7 @@ layout: default
       var form = document.getElementById("loginForm");
       var Email = form.email.value.replace('<'||'>'||'/', '');
       var Password = form.psw.value.replace('<'||'>'||'/', '');
-      alert(fetch("https://68.183.112.1/users/login", {method: "POST", 
+      alert(fetch("68.183.115.192:443/users/login", {method: "POST", 
                            body: JSON.stringify({"email": Email, "password": Password}),
                            headers: {'Content-Type': 'application/json',
                                       'Accept': 'application/json'}}))
