@@ -16,6 +16,7 @@ layout: default
 <button onclick= "sendData()">Login</button>
 <script>
   function sendData(){
+      var form = document.getElementById("loginForm");
       var Email = form.email.value.replace('<'||'>'||'/', '');
       var Password = form.psw.value.replace('<'||'>'||'/', '');
       alert(fetch("https://68.183.112.1/users/login", {method: "POST", 
