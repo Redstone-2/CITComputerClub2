@@ -82,13 +82,13 @@ var raw = JSON.stringify({
 });
  
 var requestOptions = {
-  method: 'PUT',
+  method: 'POST',
   headers: myHeaders,
   body: raw,
   redirect: 'follow'
 };
  
-fetch("68.183.115.192:443/admin/signup", requestOptions)
+fetch("http://68.183.115.192:443/admin/signup", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
