@@ -6,7 +6,7 @@ layout: default
     <style>
 .alert {
   padding: 20px;
-  background-color: #f44336;
+  background-color: #c2c2c2;
   color: white;
   display: none;
 }
@@ -36,6 +36,16 @@ layout: default
   </body>
 </html>
 <script>
+    async function getAttendance(){
+    
+   return fetch("68.183.115.192:443/attendance", 
+                        {method: "POST", 
+                           body: JSON.stringify({"Longitude": position.coords.longitude,
+                                                 "Latitude": position.coords.latitude,
+                                                 "usrCookie": getCookie("User")}),
+                           headers: {'Content-Type': 'application/json',
+                                      'Accept': 'application/json'}})
+  }
   var x = document.getElementById("message");
   var popup = document.getElementById("alert");
   function getLocation() {
@@ -49,15 +59,11 @@ layout: default
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
-  
-  console.log(fetch("https://68.183.112.1/hello", {"token": getCookie("User")}).then(response => response.text()).then(data => console.log(data)));
-  
-  /*fetch("https://68.183.112.1/main.go", {method: "POST", 
-                           body: JSON.stringify({"Longitude": position.coords.longitude,
-                                                 "Latitude": position.coords.latitude,
-                                                 "usrCookie": getCookie("User")}),
-                           headers: {'Content-Type': 'application/json',
-                                      'Accept': 'application/json'}})*/
+    
+  var status = getAttendance();
+    x.innerHTML = status;
+  popup.style.display='block';
+ 
 }
   function showError(error) {
   switch(error.code) {
