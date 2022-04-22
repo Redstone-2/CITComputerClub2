@@ -14,3 +14,5 @@ Digital Ocean Mongodb: mongodb+srv://doadmin:E7l1Zcz9j0x6o523@mongodbcomputerclu
 
 
 DigitalOcean Droplet Password: 123SECRET 
+
+SSL passphrase: password
