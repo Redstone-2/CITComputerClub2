@@ -44,7 +44,7 @@ layout: default
                                                  "Latitude": position.coords.latitude,
                                                  "usrCookie": getCookie("User")}),
                            headers: {'Content-Type': 'application/json',
-                                      'Accept': 'application/json'}})
+                                      'Accept': 'application/json'}}).text();
   }
   var x = document.getElementById("message");
   var popup = document.getElementById("alert");
