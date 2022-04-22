@@ -15,7 +15,7 @@ permalink: /admin/attendance
 
 <script type = "text/javascript">
   async function getData(fname, lname){
-   return promise fetch("68.183.115.192:443/admin/attendance", 
+   return fetch("68.183.115.192:443/admin/attendance", 
                         {method: "POST", 
                            body: JSON.stringify({
                              "first_name": fname,
