@@ -60,15 +60,13 @@ var admin = document.getElementById("admin").value;
   
 fetch("68.183.115.192:443/admin/signup", {method: "POST", 
                            body: JSON.stringify({
-                             "first_name": fname,
-                             "last_name": lname,
-                             "password": pswor,
-                             "email": email,
-                             "user_type": admin,
-                             "CSHS": cshs,
-                             "cookie": getCookie("user")
+                             "First_name": fname,
+                             "Last_name": lname,
+                             "Password": pswor,
+                             "Email": email,
+                             "User_type": admin,
+                             "CSHS": cshs
                            }),
-                           headers: {'Content-Type': 'application/json',
-                                      'Accept': 'application/json'}})
+                           headers: {'Content-Type': 'application/json'}})
 }
 </script>
