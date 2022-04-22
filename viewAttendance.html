@@ -2,6 +2,17 @@
 layout: default
 permalink: /admin/attendance
 ---
+
+<div class="flex">
+  <input type="text" enctype="multipart/form-data" placeholder="First name" name="fname" id="fname">
+  <input type="text" enctype="multipart/form-data" placeholder="Last name" name="lname" id="lname">
+</div>
+
+<button onclick="loadUser()">Load Data</button>
+
+<ul id ="list">
+</ul>
+
 <script>
   async function getData(fname, lname){
    return promise fetch("68.183.115.192:443/admin/attendance", {method: "POST", 
@@ -29,14 +40,3 @@ permalink: /admin/attendance
     
   }
 </script>
-
-<div class="flex">
-  <input type="text" enctype="multipart/form-data" placeholder="First name" name="fname" id="fname">
-  <input type="text" enctype="multipart/form-data" placeholder="Last name" name="lname" id="lname">
-</div>
-
-<button onclick="loadUser();">Load Data</button>
-
-<ul id ="list">
-</ul>
-
