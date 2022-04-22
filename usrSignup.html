@@ -33,6 +33,21 @@ permalink: /admin/signup
 
 </body>
 <script>
+     function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 function makeUsr(){
   
 var form = document.getElementById("loginForm");
@@ -50,7 +65,8 @@ fetch("68.183.115.192:443/admin/signup", {method: "POST",
                              "password": pswor,
                              "email": email,
                              "user_type": admin,
-                             "CSHS": cshs
+                             "CSHS": cshs,
+                             "cookie": getCookie("user")
                            }),
                            headers: {'Content-Type': 'application/json',
                                       'Accept': 'application/json'}})
