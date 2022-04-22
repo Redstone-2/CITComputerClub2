@@ -58,7 +58,8 @@ var email = document.getElementById("email").value;
 var cshs = document.getElementById("cshs").value;
 var admin = document.getElementById("admin").value;
   
-fetch("68.183.115.192:443/admin/signup", {method: "POST", 
+fetch("68.183.115.192:443/admin/signup", {/*method: "POST",*/ 
+                           headers: {'Content-Type': 'application/json'},
                            body: JSON.stringify({
                              "First_name": fname,
                              "Last_name": lname,
@@ -66,7 +67,6 @@ fetch("68.183.115.192:443/admin/signup", {method: "POST",
                              "Email": email,
                              "User_type": admin,
                              "CSHS": cshs
-                           }),
-                           headers: {'Content-Type': 'application/json'}})
+                           })})
 }
 </script>
