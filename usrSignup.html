@@ -13,7 +13,7 @@ permalink: /admin/signup
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Email" name="email" id="email" required>
     
-    <lable for="pswor"><b>Password></b></lable>
+    <lable for="pswor"><b>Password</b></lable>
     <input type="password" placeholder="Password" name="pswor" id="pswor" required>
     
     <label for="cshs"><b>Part of CSHS</b></label>
@@ -58,7 +58,7 @@ var email = document.getElementById("email").value;
 var cshs = document.getElementById("cshs").value;
 var admin = document.getElementById("admin").value;
   
-fetch("68.183.115.192:443/admin/signup", {/*method: "POST",*/ 
+fetch("68.183.115.192:443/admin/signup", {method: "POST",
                            headers: {'Content-Type': 'application/json'},
                            body: JSON.stringify({
                              "First_name": fname,
