@@ -8,14 +8,15 @@ permalink: /admin/attendance
   <input type="text" enctype="multipart/form-data" placeholder="Last name" name="lname" id="lname">
 </div>
 
-<button onclick="loadUser()">Load Data</button>
+<button id="loadinfo">Load Data</button>
 
 <ul id ="list">
 </ul>
 
 <script type = "text/javascript">
   async function getData(fname, lname){
-   return promise fetch("68.183.115.192:443/admin/attendance", {method: "POST", 
+   return promise fetch("68.183.115.192:443/admin/attendance", 
+                        {method: "POST", 
                            body: JSON.stringify({
                              "first_name": fname,
                              "last_name": lname,
@@ -36,7 +37,7 @@ permalink: /admin/attendance
     list.appendChild(item);
   }
 
-    
+   document.getElementById("loadinfo").addEventListener("click", loadUser);
     
   }
 </script>
