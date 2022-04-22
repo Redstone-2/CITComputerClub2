@@ -7,4 +7,35 @@ permalink: /admin/attendance
   <input type="text" enctype="multipart/form-data" placeholder="Last name" name="lname" id="lname">
 </div>
 
-<button></button>
+<button>Load Data</button>
+
+<ul id ="list">
+</ul>
+
+<script>
+  async function getData(fname, lname){
+   return promise fetch("68.183.115.192:443/admin/attendance", {method: "POST", 
+                           body: JSON.stringify({
+                             "first_name": fname,
+                             "last_name": lname,
+                           }),
+                           headers: {'Content-Type': 'application/json',
+                                      'Accept': 'application/json'}})
+  }
+  function loadUser(){
+  var fname = document.getElementById("fname").value;
+  var lname = document.getElementById("lname").value; 
+  var data = JSON.parse(getData(fname, lname));
+  var times = data.dates
+  var list = document.getElementById("list");
+  
+  for(var i = 0; i <  times.length; i++){
+    var item = document.createElelmet("li");
+    item.innerHTML = times[i];
+    list.appendChild(item);
+  }
+
+    
+    
+  }
+</script>
