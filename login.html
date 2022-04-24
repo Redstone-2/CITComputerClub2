@@ -13,8 +13,9 @@ layout: default
       
     </div>
   </form>
-<button onclick= "sendData()">Login</button>
+<button onclick= "test()">Login</button>
 <script>
+ function test() {
   var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
@@ -34,6 +35,6 @@ fetch("https://computerclub.duckdns.org/login", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
-  
+ }
 </script>
   
