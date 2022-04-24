@@ -45,7 +45,7 @@ layout: default
         var cookies = user.split(".");
         var cookie = atob(cookies[1]);
         var userid = JSON.parse(cookie)["user_id"];
-        var res = await fetch("68.183.115.192:443/userdata/"+userid, {method: "GET"});
+        var res = await fetch("computerclub.duckdns.org/userdata/"+userid, {method: "GET"});
         console.log(res);
         return await res.json();
     } catch (error) {
