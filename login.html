@@ -22,7 +22,8 @@ layout: default
       return fetch("computerclub.duckdns.org/login", {method: "POST", 
                            body: JSON.stringify({"email": Email, "password": Password}),
                            headers: {'Content-Type': 'application/json',
-                                      'Accept': 'application/json'}})}
+                                      'Accept': 'application/json'}})
+  }
   function sendData(){
     var response = login().text();
     if (response = "error"){
