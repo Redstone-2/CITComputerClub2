@@ -15,7 +15,7 @@ layout: default
   </form>
 <button onclick= "sendData()">Login</button>
 <script>
-  async functon login(){      
+<!  async functon login(){      
     var form = document.getElementById("loginForm");
       var Email = form.email.value.replace('<'||'>'||'/', '');
       var Password = form.psw.value.replace('<'||'>'||'/', '');
@@ -32,5 +32,25 @@ layout: default
     }
 
   }
+  >
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+   "email": Email,
+    "password": Password
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch("https://computerclub.duckdns.org/login", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 </script>
   
