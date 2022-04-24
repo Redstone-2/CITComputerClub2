@@ -15,26 +15,26 @@ layout: default
   </form>
 <button onclick= "sendData()">Login</button>
 <script>
-  function sendData() {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+  function sendData(){
+      var form = document.getElementById("loginForm");
+  async functon login(){      
+    var form = document.getElementById("loginForm");
+      var Email = form.email.value.replace('<'||'>'||'/', '');
+      var Password = form.psw.value.replace('<'||'>'||'/', '');
+      fetch("68.183.115.192:443/login", {method: "POST", 
+      return fetch("68.183.115.192:443/login", {method: "POST", 
+                           body: JSON.stringify({"email": Email, "password": Password}),
+                           headers: {'Content-Type': 'application/json',
+                                      'Accept': 'application/json'}})
+                                      'Accept': 'application/json'}})}
+  function sendData(){
+    var response = login().text();
+    if (response = "error"){
+      alert("error: incorect email or password");
+    }else{
+      setCookie("User", response);
+    }
 
-    var raw = JSON.stringify({
-      "email": Email,
-      "password": Password
-    });
-
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-
-    fetch("https://computerclub.duckdns.org/login", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
   }
 </script>
   
