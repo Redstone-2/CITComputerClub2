@@ -19,7 +19,7 @@ layout: default
     var form = document.getElementById("loginForm");
       var Email = form.email.value.replace('<'||'>'||'/', '');
       var Password = form.psw.value.replace('<'||'>'||'/', '');
-      return fetch("68.183.115.192:443/login", {method: "POST", 
+      return fetch("computerclub.duckdns.org/login", {method: "POST", 
                            body: JSON.stringify({"email": Email, "password": Password}),
                            headers: {'Content-Type': 'application/json',
                                       'Accept': 'application/json'}})}
