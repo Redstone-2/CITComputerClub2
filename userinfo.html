@@ -46,6 +46,8 @@ layout: default
         var userid = JSON.parse(cookie).Uid;
   var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
+
+ console.log(userid);
  
  
 var requestOptions = {
@@ -55,7 +57,7 @@ var requestOptions = {
 };
  var data = "";
 fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
-  .then(response => console.log(response.text()))
+  .then(response => response.text())
   .then(result => {
  
  console.log(result);
