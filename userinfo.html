@@ -70,7 +70,7 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  if (data.user_type = "ADMIN"){
  document.getElementById("admin").checked = true
  } else{document.getElementById("admin").checked = false}
- }})
+ })
  .catch(error => console.log('error', error));
  
 </script>
