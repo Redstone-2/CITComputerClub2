@@ -39,7 +39,7 @@ layout: default
   }
   return "";
 }
-  function getUserData() {
+
         var user = getCookie("User");
         var cookies = user.split(".");
         var cookie = atob(cookies[1]);
@@ -58,9 +58,7 @@ fetch("http://68.183.115.192:443/userdata/"+userid, requestOptions)
   .then(response => response.text())
   .then(result => {data = JSON.parse(result)})
   .catch(error => console.log('error', error));
-}
  
- var data = getUserData();
  console.log(data);
  document.getElementById("fname").value = data.First_name;
  document.getElementById("lname").value = data.Last_name;
