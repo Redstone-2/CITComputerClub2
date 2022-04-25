@@ -43,8 +43,6 @@ layout: default
         var userid = JSON.parse(cookie).Uid;
   var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-
- console.log(userid);
  
  
 var requestOptions = {
@@ -57,7 +55,6 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
   .then(response => response.text())
   .then(result => {
  
- console.log(result);
  
  data = JSON.parse(result);
  
@@ -72,7 +69,6 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  }else{document.getElementById("cshs").checked = false}
  if (data.user_type == "ADMIN"){
  document.getElementById("adminss").checked = true
- console.log("if trigger");
  } else{document.getElementById("adminss").checked = false}
  })
  .catch(error => console.log('error', error));
