@@ -59,7 +59,7 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
   .then(result => {data = JSON.parse(result)})
   .catch(error => console.log('error', error));
  
- console.log(data);
+ console.log("Data:"+data);
  document.getElementById("fname").value = data.First_name;
  document.getElementById("lname").value = data.Last_name;
  document.getElementById("email").value = data.Email;
