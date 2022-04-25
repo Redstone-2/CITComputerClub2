@@ -64,6 +64,9 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  document.getElementById("fname").value = data.first_name;
  document.getElementById("lname").value = data.last_name;
  document.getElementById("email").value = data.email;
+ 
+ console.log(data.CSHS+";"+data.user_type);
+ 
  if (data.CSHS = "CSHS_Member"){
  document.getElementById("cshs").checked = true
  }else{document.getElementById("cshs").checked = false}
