@@ -72,6 +72,7 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  }else{document.getElementById("cshs").checked = false}
  if (data.user_type = "ADMIN"){
  document.getElementById("admin").checked = true
+  console.log("if trigger");
  } else{document.getElementById("admin").checked = false}
  })
  .catch(error => console.log('error', error));
