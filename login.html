@@ -18,10 +18,13 @@ layout: default
  function test() {
   var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-
+   
+var email = document.getElementById("email").value;
+var pass = document.getElementById("psw").value;
+   
 var raw = JSON.stringify({
-  "email": "test1@gmail.com",
-  "password": "testingPW"
+  "email": email,
+  "password": pass
 });
 
 var requestOptions = {
