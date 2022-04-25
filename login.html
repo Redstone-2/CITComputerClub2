@@ -36,7 +36,7 @@ fetch("https://computerclub.duckdns.org/login", requestOptions)
   .then(result => {
   var result = JSON.parse(result);
   console.log(result.token);
-  document.cookie = "User="+result;
+  document.cookie = "User="+result.token;
 })
   .catch(error => console.log('error', error));
  }
