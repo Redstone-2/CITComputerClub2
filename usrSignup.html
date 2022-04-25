@@ -2,8 +2,33 @@
 layout: default
 permalink: /admin/signup
 ---
+<style>
+  .alert {
+  padding: 20px;
+  background-color: #c2c2c2;
+  color: white;
+  display: none;
+}
 
-<body>
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+    <div class="alert" id="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <p id="message"></p>
+</div>
   <form>
     <label for="fname"><b>First Name</b></label>
     <input type="text" placeholder="First Name" name="fname" id="fname" required>
@@ -32,7 +57,6 @@ permalink: /admin/signup
   </form>
       <button onclick="makeUsr()">Create User</button>
 
-</body>
 <script>
      function getCookie(cname) {
   let name = cname + "=";
@@ -84,11 +108,17 @@ fetch("https://computerclub.duckdns.org/admin/signup", requestOptions)
   .then(result => {console.log(result);
        var result = JSON.parse(result);
         if (result.error == null){
-        console.log("Suscess")
+        alerts("Suscess");
         } else {
-          console.log(result.error);
+          alerts(result.error);
         }
                   }
        )
+}
+function alerts(message){
+   var x = document.getElementById("message");
+  var popup = document.getElementById("alert");
+  popup.style.display='block';
+  x.innerHTML = message;
 }
 </script>
