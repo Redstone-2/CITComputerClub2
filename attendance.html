@@ -56,8 +56,11 @@ layout: default
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
     var user = getCookie("User");
+     console.log(user);
     var cookies = user.split(".");
+     console.log(cookies);
     var cookiese = atob(cookies[1]);
+     console.log(cookiese);
     cookiese = JSON.parse(cookiese) 
      console.log(cookiese.Uid);
      
