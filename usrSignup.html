@@ -53,7 +53,7 @@ permalink: /admin/signup
     <input type="radio" name="admin" id="admin" value="ADMIN"required>
     <label for="USER">False</label>
     <input type="radio" name="admin" id="admin" value="USER"required>
-      <button onsubmit="event.preventDafault(); makeUsr();">Create User</button>
+      <button onsubmit="event.stopImmediatePropagation(); makeUsr();">Create User</button>
     </form>
     
 
