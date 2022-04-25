@@ -12,9 +12,6 @@ layout: default
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Email" name="email" id="email" readonly>
     
-    <lable for="pswor"><b>Password</b></lable>
-    <input type="text" placeholder="Password" name="pswor" id="pswor" readonly>
-    
     <label for="cshs"><b>Part of CSHS</b></label>
     <input type="checkbox" name="cshs" id="cshs" value="CSHS_Member" readonly>
     
@@ -64,11 +61,10 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  
  data = JSON.parse(result);
  
- document.getElementById("fname").value = data.First_name;
- document.getElementById("lname").value = data.Last_name;
- document.getElementById("email").value = data.Email;
- document.getElementById("pswor").value = data.psw;
- if (data.cshs = "CSHS_Member"){
+ document.getElementById("fname").value = data.first_name;
+ document.getElementById("lname").value = data.last_name;
+ document.getElementById("email").value = data.email;
+ if (data.CSHS = "CSHS_Member"){
  document.getElementById("cshs").checked = true
  }
  if (data.user_type = "ADMIN"){
