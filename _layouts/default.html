@@ -419,7 +419,7 @@ function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue;
 }
 function deleteCookie(name) {
- document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC;;
+ document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 }
 function logout() {
   deleteCookie("User");
