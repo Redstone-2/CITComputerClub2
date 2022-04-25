@@ -37,6 +37,7 @@ fetch("https://computerclub.duckdns.org/login", requestOptions)
   var result = JSON.parse(result);
   console.log(result.token);
   document.cookie = "User="+result.token;
+  window.location.href = 'https://mrredstone2.github.io/CITComputerClub2';
 })
   .catch(error => console.log('error', error));
  }
