@@ -54,7 +54,7 @@ var requestOptions = {
   redirect: 'follow'
 };
  var data = "";
-fetch("http://68.183.115.192:443/userdata/"+userid, requestOptions)
+fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
   .then(response => response.text())
   .then(result => {data = JSON.parse(result)})
   .catch(error => console.log('error', error));
