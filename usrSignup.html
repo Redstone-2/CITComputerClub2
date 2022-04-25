@@ -53,8 +53,8 @@ permalink: /admin/signup
     <input type="radio" name="admin" id="admin" value="ADMIN"required>
     <label for="USER">False</label>
     <input type="radio" name="admin" id="admin" value="USER"required>
+      <button onsubmit="return makeUsr()">Create User</button>
     </form>
-      <button onclick="makeUsr()">Create User</button>
     
 
 <script>
@@ -115,6 +115,7 @@ fetch("https://computerclub.duckdns.org/admin/signup", requestOptions)
         }
                   }
        )
+  return false;
 }
 function alerts(message){
    var x = document.getElementById("message");
