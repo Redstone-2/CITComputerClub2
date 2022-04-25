@@ -16,7 +16,7 @@ layout: default
     <input type="checkbox" name="cshs" id="cshs" value="CSHS_Member" readonly>
     
     <label for="admin"><b>Has Admin Privileges</b></label>
-    <input type="checkbox" name="admin" id="admin" value="ADMIN" readonly>
+    <input type="checkbox" name="admin" id="adminss" value="ADMIN" readonly>
 
     
   </form>
@@ -71,9 +71,9 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  document.getElementById("cshs").checked = true
  }else{document.getElementById("cshs").checked = false}
  if (data.user_type = "ADMIN"){
- document.getElementById("admin").checked = true
+ document.getElementById("adminss").checked = true
   console.log("if trigger");
- } else{document.getElementById("admin").checked = false}
+ } else{document.getElementById("adminss").checked = false}
  })
  .catch(error => console.log('error', error));
  
