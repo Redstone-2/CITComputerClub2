@@ -329,11 +329,6 @@
         <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%234285F4&ctz=America%2FNew_York&mode=MONTH&src=Y181bHZhazcwbTN0N2p1ZWUwcGVmdGY4bWFqNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26" style="border:solid 1px #777" width = "600" height="500" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
-
-<div class="flex">
-  <button onclick="loginTest()">Login test(admin)</button>
-  <button onclick="loginUserTest()">Login test(user)</button>
-</div>
     <div class="container">
       <section id="main_content">
         {{ content }}
@@ -358,14 +353,6 @@ function menuExpand() {
     x.className = "navbar";
   }
 };
-function loginTest() {
-  setCookie("User", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGaXJzdF9uYW1lIjoiSm9obiIsIlVzZXJfVHlwZSI6IkFETUlOIiwiVG9rZW4iOiIxMTA0QVk0NkEifQ.Bj8_tMhJUn9A42AP3t_iE76fR9bCT4JHrl6KDNXxh1U");
-  location.reload();
-}
-  function loginUserTest(){
-    setCookie("User", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGaXJzdF9uYW1lIjoiSm9lIiwiVXNlcl9UeXBlIjoiVVNFUiIsIlRva2VuIjoiMTEwNEE2NDZBIn0.M6l4Xyk5rdbSHZEmh6-sz7b-bzO4vkrTXEjNTqzFgNM");
-    location.reload();
-  }
 function load(){
     try{
   var x = document.getElementById("loginbutton");
