@@ -79,7 +79,7 @@ var requestOptions = {
   redirect: 'follow'
 };
  
-fetch("https://computerclub.duckdns.org/admin/signup", requestOptions)
+fetch("https://thingproxy.freeboard.io/fetch/https://computerclub.duckdns.org/admin/signup", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => alert('error', error));
