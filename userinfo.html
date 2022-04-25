@@ -43,7 +43,7 @@ layout: default
         var user = getCookie("User");
         var cookies = user.split(".");
         var cookie = atob(cookies[1]);
-        var userid = JSON.parse(cookie)["user_id"];
+        var userid = JSON.parse(cookie).Uid;
   var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
  
