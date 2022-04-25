@@ -53,8 +53,10 @@ layout: default
 }
    function getAttendance(position){
        
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+     
+     
     var user = getCookie("User");
      console.log(user);
     var cookies = user.split(".");
