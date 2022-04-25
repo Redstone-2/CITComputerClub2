@@ -58,9 +58,10 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
   .then(response => console.log(response.text()))
   .then(result => {
  
+ console.log(result);
+ 
  data = JSON.parse(result);
  
- console.log(result);
  document.getElementById("fname").value = data.First_name;
  document.getElementById("lname").value = data.Last_name;
  document.getElementById("email").value = data.Email;
