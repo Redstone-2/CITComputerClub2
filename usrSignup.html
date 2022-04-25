@@ -123,7 +123,7 @@ fetch("https://computerclub.duckdns.org/admin/signup", requestOptions)
   .then(result => {console.log(result);
        var result = JSON.parse(result);
         if (result.error == null){
-        alerts("Suscess");
+        alerts("Success");
         } else {
           alerts(result.error);
         }
