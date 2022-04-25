@@ -55,7 +55,10 @@ layout: default
        
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-var cookiese = JSON.parse(getCookie("User"));
+    var user = JSON.parse(getCookie("User"));
+    var cookies = user.split(".");
+    var cookiese = atob(cookies[1]);
+     
       var raw = JSON.stringify({
         "latitude": position.coords.latitude,
         "longitude": position.coords.longitude,
