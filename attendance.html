@@ -61,8 +61,8 @@ layout: default
     cookiese = JSON.parse(cookiese) 
      
       var raw = JSON.stringify({
-        "latitude": position.coords.latitude,
-        "longitude": position.coords.longitude,
+        "latitude": String(position.coords.latitude),
+        "longitude": String(position.coords.longitude),
         "user_id": cookiese.Uid
       });
      console.log(raw);
