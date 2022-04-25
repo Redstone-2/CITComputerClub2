@@ -56,8 +56,7 @@ var requestOptions = {
  var data = "";
 fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
   .then(response => response.text())
-  .then(result => {data = JSON.parse(result)})
-  .catch(error => console.log('error', error));
+  .then(result => {data = JSON.parse(result);
  
  console.log("Data:"+data);
  document.getElementById("fname").value = data.First_name;
@@ -69,6 +68,7 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  }
  if (data.user_type = "ADMIN"){
  document.getElementById("admin").checked = true
- }
+ }})
+ .catch(error => console.log('error', error));
  
 </script>
