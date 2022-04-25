@@ -59,6 +59,7 @@ layout: default
     var cookies = user.split(".");
     var cookiese = atob(cookies[1]);
     cookiese = JSON.parse(cookiese) 
+     console.log(cookiese.Uid);
      
       var raw = JSON.stringify({
         "latitude": String(position.coords.latitude),
