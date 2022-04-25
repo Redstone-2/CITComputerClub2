@@ -36,7 +36,7 @@ layout: default
   </body>
 </html>
 <script>
-   function getAttendance(){
+   function getAttendance(position){
        
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
@@ -76,7 +76,7 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
     
-  var status = getAttendance();
+  var status = getAttendance(position);
     x.innerHTML = status;
   popup.style.display='block';
  
