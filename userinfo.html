@@ -67,12 +67,12 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  
  console.log(data.CSHS+";"+data.user_type);
  
- if (data.CSHS = "CSHS_Member"){
+ if (data.CSHS == "CSHS_Member"){
  document.getElementById("cshs").checked = true
  }else{document.getElementById("cshs").checked = false}
- if (data.user_type = "ADMIN"){
+ if (data.user_type == "ADMIN"){
  document.getElementById("adminss").checked = true
-  console.log("if trigger");
+ console.log("if trigger");
  } else{document.getElementById("adminss").checked = false}
  })
  .catch(error => console.log('error', error));
