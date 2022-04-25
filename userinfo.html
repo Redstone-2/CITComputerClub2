@@ -61,7 +61,7 @@ fetch("http://68.183.115.192:443/userdata/"+userid, requestOptions)
 }
  
  var data = getUserData();
- 
+ console.log(data);
  document.getElementById("fname").value = data.First_name;
  document.getElementById("lname").value = data.Last_name;
  document.getElementById("email").value = data.Email;
