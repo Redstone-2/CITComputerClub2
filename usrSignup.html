@@ -84,11 +84,22 @@ var fname = document.getElementById("fname").value;
 var lname = document.getElementById("lname").value; 
 var pswor = document.getElementById("pswor").value;
 var email = document.getElementById("email").value;
-var cshs = document.getElementById("cshs").value;
-var admin = document.getElementById("admin").value;
   
+ var radios = document.getElementsByName('cshs');
+ for (var radio of radios){
+     if (radio.checked) {
+         var cshs =radio.value;
+     }
+ }  
   
-  var myHeaders = new Headers();
+var radios = document.getElementsByName('admin');
+for (var radio of radios){
+     if (radio.checked) {
+         admin = radio.value;
+     }
+ }
+ 
+var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
  
 var raw = JSON.stringify({
