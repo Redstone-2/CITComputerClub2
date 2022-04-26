@@ -4,8 +4,12 @@ permalink: /admin/usrinfo
 ---
 <body>
 <div class="flex">
-  <input type="text" enctype="multipart/form-data" placeholder="First name" name="fname" id="fname">
-  <input type="text" enctype="multipart/form-data" placeholder="Last name" name="lname" id="lname">
+  <input type="text" enctype="multipart/form-data" placeholder="First name" name="fname" id="fname" list="fnames">
+    <datalist id="fnames">
+    </datalist>
+  <input type="text" enctype="multipart/form-data" placeholder="Last name" name="lname" id="lname" list="lnames">
+    <datalist id="lnames">
+    </datalist>
 </div>
 
 <button id="loadinfo">Load Data</button>
@@ -58,7 +62,11 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   for (var i = 0; i<res.length; i++){
   dummy = JSON.parse(res[i]);
     firstname.push(dummy.First_name);
+    var elementfname = document.createElement("option");
+    lastname.push(dummy.Last_name);
   }
+  
+  
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
 </script>
