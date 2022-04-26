@@ -36,26 +36,91 @@ layout: default
   </body>
 </html>
 <script>
-    function test() {
-      var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-var raw = JSON.stringify({
-  "latitude": "37.6756",
-  "longitude": "-77.5996",
-  "user_id": "626261c628d962ca14045b24"
-});
-
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
-
-fetch("https://computerclub.duckdns.org/attendance", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+    function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+   function getAttendance(position){
+       
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+     
+     
+    var user = getCookie("User");
+     console.log(user);
+    var cookies = user.split(".");
+     console.log(cookies);
+    var cookiese = atob(cookies[1]);
+     console.log(cookiese);
+    cookiese = JSON.parse(cookiese) 
+     console.log(cookiese.Uid);
+     
+      var raw = JSON.stringify({
+        "latitude": String(position.coords.latitude),
+        "longitude": String(position.coords.longitude),
+        "user_id": cookiese.Uid
+      });
+     console.log(raw);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+      var res = "";
+      fetch("https://computerclub.duckdns.org/attendance", requestOptions)
+        .then(response => response.text())
+        .then(result => res = result)
+        .catch(error => console.log('error', error));
+      return res;
+     
+     
+  }
+  var x = document.getElementById("message");
+  var popup = document.getElementById("alert");
+  function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  };
+  popup.style.display='block';
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+    
+  var status = getAttendance(position);
+    x.innerHTML = status;
+  popup.style.display='block';
+ 
+}
+  function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+  }
 </script>
