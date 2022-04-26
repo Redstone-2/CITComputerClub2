@@ -1,0 +1,65 @@
+---
+layout: default
+permalink: /admin/attandance
+---
+<body>
+<div class="flex">
+  <input type="text" enctype="multipart/form-data" placeholder="First name" name="fname" id="fname">
+  <input type="text" enctype="multipart/form-data" placeholder="Last name" name="lname" id="lname">
+</div>
+
+<button id="loadinfo">Load Data</button>
+
+<ul id ="list">
+</ul>
+
+<script type = "text/javascript">
+   function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function loadUser(){
+  
+  }
+  
+  var myHeaders = new Headers();
+myHeaders.append("token", getCookie("User"));
+ 
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+  
+var res = "";  
+fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
+  .then(response => response.text())
+  .then(result => res = result)
+  .catch(error => console.log('error', error));
+  
+  
+  var firstname = [];
+  var lastname = [];
+  var dummy = null;
+  
+  console.log(res);
+  
+  for (var i = 0; i<res.length(); i++){
+  dummy = JSON.parse(res[i[);
+    firstname.push(dummy.First_name);
+  }
+  
+     document.getElementById("loadinfo").addEventListener("click", loadUser);
+</script>
+</body>
