@@ -44,7 +44,6 @@ var requestOptions = {
   headers: myHeaders,
   redirect: 'follow'
 };
-var name = [];
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   .then(response => response.text())
   .then(result => {res = result;
@@ -52,6 +51,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
     var dummy = {};
     res = JSON.parse(res).data;
     var dumdum = "";
+    var name = [];
 
     console.log(res);
 
