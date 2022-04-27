@@ -57,7 +57,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
 
     for (var i = 0; i<res.length; i++){
       console.log(res[i]);
-      dummy = JSON.parse(res[i]);
+      dummy = res[i];
       firstname.push(dummy.first_name);
       lastname.push(dummy.last_name);
       var elementfname = document.createElement("option");
