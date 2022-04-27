@@ -49,21 +49,23 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
 
     var dummy = {};
     res = JSON.parse(res).data;
+    name = [];
+    var dumdum = "";
 
     console.log(res);
 
     for (var i = 0; i<res.length; i++){
       console.log(res[i]);
       dummy = res[i];
-     name.push(dummy.first_name);
+      dumdum = dummy.first_name + " " + dummy.last_name;
+      name.push(dumdum.toLower());
       lastname.push(dummy.last_name);
       var elementname = document.createElement("option");
       elementname.value = dummy.first_name + " " + dummy.last_name;
       var card = document.getElementById("names")
       card.appendChild(elementname);
     }
-    console.log(firstname);
-    console.log(lastname);
+    console.log(name);
   })
   .catch(error => console.log('error', error));
   
