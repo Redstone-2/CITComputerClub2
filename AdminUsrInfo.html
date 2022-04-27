@@ -62,7 +62,8 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       lastname.push(dummy.last_name);
       var elementname = document.createElement("option");
       elementname.value = dummy.first_name + " " + dummy.last_name;
-      document.getElementById("names").appendChild(elementname);
+      var card = document.getElementById("names")
+      card.appendChild(elementname);
     }
     console.log(firstname);
     console.log(lastname);
