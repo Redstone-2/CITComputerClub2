@@ -60,7 +60,6 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       dummy = res[i];
       dumdum = dummy.first_name + " " + dummy.last_name;
       name.push(dumdum.toLowerCase());
-      lastname.push(dummy.last_name);
       var elementname = document.createElement("option");
       elementname.value = dummy.first_name + " " + dummy.last_name;
       var card = document.getElementById("names")
