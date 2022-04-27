@@ -35,8 +35,11 @@ function loadUser(){
   
   console.log(res);
   var inp = document.getItemById("name").value.toLowerCase();
+  var dummy = "";
+  
   for (var i = 0; i < res.length; i++){
-    if (imp = {res[i].first_name + " " + res[i].last_name}.toLowerCase()){
+    dummy = res[i].first_name + " " + res[i].last_name;
+    if (imp = dummy.toLowerCase()){
       console.log("suscess");
     }
   }
