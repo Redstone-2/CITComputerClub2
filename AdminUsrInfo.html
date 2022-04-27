@@ -49,6 +49,9 @@ permalink: /admin/usrinfo
     
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Email" name="email" id="email" readonly>
+   
+   <label for="date"><b>Last Attendance</b></label>
+    <input type="text" placeholder="Last User Attendance" name="date" id="date" readonly>
     
     <label for="cshs"><b>Part of CSHS</b></label>
     <input type="checkbox" name="cshs" id="cshs" value="CSHS_Member" readonly>
@@ -93,6 +96,7 @@ function loadUser(){
        document.getElementById("fname").value = res[i].first_name;
        document.getElementById("lname").value = res[i].last_name;
        document.getElementById("email").value = res[i].email;
+       document.getElementById("date").value = res[i].login_date;
 
        if (res[i].CSHS == "CSHS_Member"){
        document.getElementById("cshs").checked = true
@@ -100,6 +104,7 @@ function loadUser(){
        if (res[i].user_type == "ADMIN"){
        document.getElementById("adminss").checked = true
        } else{document.getElementById("adminss").checked = false}
+      return;
       
     }else {
       document.getElementById("usrform").style.display = "none";
