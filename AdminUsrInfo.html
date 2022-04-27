@@ -98,7 +98,7 @@ function loadUser(){
        document.getElementById("email").value = res[i].email;
        document.getElementById("date").value = res[i].login_date;
 
-       if (res[i].CSHS == "CSHS_Member"){
+       if (res[i].cshs == "CSHS_Member"){
        document.getElementById("cshs").checked = true
        }else{document.getElementById("cshs").checked = false}
        if (res[i].user_type == "ADMIN"){
