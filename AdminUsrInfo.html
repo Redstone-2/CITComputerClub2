@@ -12,8 +12,24 @@ permalink: /admin/usrinfo
 
 <button id="loadinfo">Load Data</button>
 
-<ul id ="list">
-</ul>
+ <form>
+    <label for="fname"><b>First Name</b></label>
+    <input type="text" placeholder="First Name" name="fname" id="fname" readonly>
+    
+    <label for="lname"><b>Last Name</b></label>
+    <input type="text" placeholder="Last Name" name="lname" id="lname" readonly>
+    
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Email" name="email" id="email" readonly>
+    
+    <label for="cshs"><b>Part of CSHS</b></label>
+    <input type="checkbox" name="cshs" id="cshs" value="CSHS_Member" readonly>
+    
+    <label for="admin"><b>Has Admin Privileges</b></label>
+    <input type="checkbox" name="admin" id="adminss" value="ADMIN" readonly>
+
+    
+  </form>
 
 <script type = "text/javascript">
    function getCookie(cname) {
@@ -40,7 +56,22 @@ function loadUser(){
   for (var i = 0; i < res.length; i++){
     dummy = res[i].first_name + " " + res[i].last_name;
     if (inp == dummy.toLowerCase()){
+      
+      
       console.log("suscess");
+      
+      
+       document.getElementById("fname").value = res[i].first_name;
+       document.getElementById("lname").value = res[i].last_name;
+       document.getElementById("email").value = res[i].email;
+
+       if (res[i].CSHS == "CSHS_Member"){
+       document.getElementById("cshs").checked = true
+       }else{document.getElementById("cshs").checked = false}
+       if (res[i].user_type == "ADMIN"){
+       document.getElementById("adminss").checked = true
+       } else{document.getElementById("adminss").checked = false}
+      
     }
   }
   
