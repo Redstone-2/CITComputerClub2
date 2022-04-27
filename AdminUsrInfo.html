@@ -33,6 +33,7 @@ permalink: /admin/usrinfo
 }
 function loadUser(){
   console.log(res);
+  console.log(name);
   }
   
   var myHeaders = new Headers();
@@ -65,7 +66,6 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       var card = document.getElementById("names")
       card.appendChild(elementname);
     }
-    console.log(name);
   })
   .catch(error => console.log('error', error));
   
