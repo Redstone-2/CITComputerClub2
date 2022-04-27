@@ -44,28 +44,26 @@ var requestOptions = {
   redirect: 'follow'
 };
   
-var res = "";  
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   .then(response => response.text())
-  .then(result => res = result)
+  .then(result => {var res = result;
+
+    var firstname = [];
+    var lastname = [];
+    var dummy = null;
+
+    console.log(res);
+
+    for (var i = 0; i<res.length; i++){
+    dummy = JSON.parse(res[i]);
+      firstname.push(dummy.First_name);
+      lastname.push(dummy.Last_name);
+      var elementfname = document.createElement("option");
+      elementfname.value = dummy.First_name + " " + dummy.Last_name;
+      document.getElementById("fnames").appendChild(elementname);
+    }
+  })
   .catch(error => console.log('error', error));
-  
-  
-  var firstname = [];
-  var lastname = [];
-  var dummy = null;
-  
-  console.log(res);
-  
-  for (var i = 0; i<res.length; i++){
-  dummy = JSON.parse(res[i]);
-    firstname.push(dummy.First_name);
-    lastname.push(dummy.Last_name);
-    var elementfname = document.createElement("option");
-    elementfname.value = dummy.First_name + " " + dummy.Last_name;
-    document.getElementById("fnames").appendChild(elementname);
-  }
-  
   
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
