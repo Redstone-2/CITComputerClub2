@@ -56,12 +56,14 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
 
     for (var i = 0; i<res.length; i++){
     dummy = JSON.parse(res[i]);
-      firstname.push(dummy.First_name);
-      lastname.push(dummy.Last_name);
+      firstname.push(dummy.first_name);
+      lastname.push(dummy.last_name);
       var elementfname = document.createElement("option");
-      elementfname.value = dummy.First_name + " " + dummy.Last_name;
+      elementfname.value = dummy.first_name + " " + dummy.last_name;
       document.getElementById("fnames").appendChild(elementname);
     }
+    console.log(firstname);
+    console.log(lastname);
   })
   .catch(error => console.log('error', error));
   
