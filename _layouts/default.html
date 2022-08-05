@@ -304,18 +304,18 @@
 
     <div class="navbar" id="myTopnav">
       <a href="https://mrredstone2.github.io/CITComputerClub2/home">Home</a>
-      <a href="https://mrredstone2.github.io/CITComputerClub2/groups.html">Groups</a>
-      <a href="https://mrredstone2.github.io/CITComputerClub2/attendance.html">Attendance</a>
-      <a href="https://mrredstone2.github.io/CITComputerClub2/signup.html">Sign Up</a>
+      <a href="https://mrredstone2.github.io/CITComputerClub2/groups">Groups</a>
+      <a href="https://mrredstone2.github.io/CITComputerClub2/attendance">Attendance</a>
+      <a href="https://mrredstone2.github.io/CITComputerClub2/signup">Sign Up</a>
       <div class="caldropdown" id="calanderdrop">
         <a href="javascript:void(0);" onclick="calclick();" class="dropbtn" id="Calander-button">Calendar</a>
       </div>
-      <a onclick="window.location.href = 'https://mrredstone2.github.io/CITComputerClub2/login.html'" id="loginbutton" style="display: none;">Login</a>
+      <a onclick="window.location.href = 'https://mrredstone2.github.io/CITComputerClub2/login'" id="loginbutton" style="display: none;">Login</a>
 
       <div class="dropdown" id="UserOptions" style="display: none;">
         <a class="dropbtn" id="usrname">Username</a>
         <div class="dropdown-content">
-          <a href="https://mrredstone2.github.io/CITComputerClub2/userinfo.html">User Info</a>
+          <a href="https://mrredstone2.github.io/CITComputerClub2/userinfo">User Info</a>
           <a id="adminlink" href="https://mrredstone2.github.io/CITComputerClub2/admin/portal" style="display: none;">Admin Portal</a>
           <a href="javascript:void(0);" onclick="logout();">Logout</a>
         </div>
@@ -412,7 +412,7 @@ function logout() {
 function calclick(){
   var x = document.getElementById("calander-dropdown");
   if (window.innerWidth < 1000) {
-    window.location.href = "https://mrredstone2.github.io/CITComputerClub2/calender.html";
+    window.location.href = "https://mrredstone2.github.io/CITComputerClub2/calender";
   } else if (x.style.display == "none"){
     x.style.display = "block";
   } else{
