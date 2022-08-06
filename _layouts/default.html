@@ -311,7 +311,7 @@
       <div class="caldropdown" id="calanderdrop">
         <a href="javascript:void(0);" onclick="calclick();" class="dropbtn" id="Calander-button">Calendar</a>
       </div>
-      <a onclick="window.location.href = 'https://mrredstone2.github.io/CITComputerClub2/login'" id="loginbutton" style="display: none;">Login</a>
+      <a onclick="document.getElementById('id01').style.display='block'" id="loginbutton" style="display: none;">Login</a>
 
       <div class="dropdown" id="UserOptions" style="display: none;">
         <a class="dropbtn" id="usrname">Username</a>
@@ -330,6 +330,25 @@
         <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%234285F4&ctz=America%2FNew_York&mode=MONTH&src=Y181bHZhazcwbTN0N2p1ZWUwcGVmdGY4bWFqNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26" style="border:solid 1px #777" width = "600" height="500" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
+      <div id="id01" class="modal">  
+  <form class="modal-content animate" id="loginForm">
+    <div class="exitcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <div class="container">
+      <label for="email"><b>Email</b></label>
+      <input type="text" enctype="multipart/form-data" placeholder="Enter Email" name="email" id="email"required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" enctype="multipart/form-data" placeholder="Enter Password" name="psw" required id="psw">
+      </form>
+   <button onclick= "usrLogin()">Login</button>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+
+</div>
     <div class="container">
       <section id="main_content">
         {{ content }}
@@ -420,6 +439,35 @@ function calclick(){
     x.style.display= "none";
   }
 }
+function usrLogin() {
+  var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+   
+var email = document.getElementById("email").value;
+var pass = document.getElementById("psw").value;
+   
+var raw = JSON.stringify({
+  "email": email,
+  "password": pass
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://computerclub.duckdns.org/login", requestOptions)
+  .then(response => response.text())
+  .then(result => {
+  var result = JSON.parse(result);
+  console.log(result.token);
+  document.cookie = "User="+result.token+"; path=/CITComputerClub2;";
+  window.location.href = 'https://mrredstone2.github.io/CITComputerClub2';
+})
+  .catch(error => console.log('error', error));
+ }
 console.log("loaded");
 </script>
 <noscript>
