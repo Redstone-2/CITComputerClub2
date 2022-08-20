@@ -11,7 +11,7 @@ permalink: userinfo
     <input type="text" placeholder="Last Name" name="lname" id="lname" readonly>
     
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Email" name="email" id="email" readonly>
+    <input type="text" placeholder="Email" name="emailid" id="emailid" readonly>
     
     <label for="cshs"><b>Part of CSHS</b></label>
     <input type="checkbox" name="cshs" id="cshs" value="CSHS_Member" disabled>
@@ -61,10 +61,10 @@ fetch("https://computerclub.duckdns.org/userdata/"+userid, requestOptions)
  
  document.getElementById("fname").value = data.first_name;
  document.getElementById("lname").value = data.last_name;
- document.getElementById("email").value = data.email;
+ document.getElementById("emailid").value = data.email;
  
  console.log(data.email+";"+data.CSHS+";"+data.user_type);
- console.log(document.getElementById("fname").value +";"+ document.getElementById("lname").value +";"+ document.getElementById("email").value);
+ console.log(document.getElementById("fname").value +";"+ document.getElementById("lname").value +";"+ document.getElementById("emailid").value);
  
  if (data.CSHS == "CSHS_Member"){
  document.getElementById("cshs").checked = true
