@@ -47,7 +47,7 @@ permalink: /admin/usrinfo
     <label for="lname"><b>Last Name</b></label>
     <input type="text" placeholder="Last Name" name="lname" id="lname" readonly>
     
-    <label for="email"><b>Email</b></label>
+    <label for="emaill"><b>Email</b></label>
     <input type="text" placeholder="Email" name="email" id="email" readonly>
    
    <label for="date"><b>Last Attendance</b></label>
@@ -96,7 +96,7 @@ function loadUser(){
       
        document.getElementById("fname").value = res[i].first_name;
        document.getElementById("lname").value = res[i].last_name;
-       document.getElementById("email").value = res[i].email;
+       document.getElementById("emaill").value = res[i].email;
        document.getElementById("date").value = res[i].login_date;  //moment(res[i].login_date).format('MMMM Do YYYY, h:mm:ss a');
 
        if (res[i].cshs == "CSHS_Member"){
@@ -143,7 +143,11 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       card.appendChild(elementname);
     }
   })
-  .catch(error => console.log('error', error));
+  .catch(error => console.log('error', error);
+      document.getElementById("usrform").style.display = "none";
+      document.getElementById("alert").style.display = "block";
+      document.getElementById("alert").innerHTML = "There has been an error. Check console for more info.";
+        );
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
 </script>
