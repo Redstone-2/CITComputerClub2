@@ -143,11 +143,11 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       card.appendChild(elementname);
     }
   })
-  .catch(error => console.log('error', error);
+  .catch(error => {console.log('error', error);
       document.getElementById("usrform").style.display = "none";
       document.getElementById("alert").style.display = "block";
       document.getElementById("alert").innerHTML = "There has been an error. Check console for more info.";
-        );
+                  });
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
 </script>
