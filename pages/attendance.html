@@ -80,11 +80,8 @@ permalink: attendance
         body: raw,
         redirect: 'follow'
       };
-      var res = "";
-      fetch("https://computerclub.duckdns.org/attendance", requestOptions)
-        .then(response => response.text())
-        .then(result => res = result)
-        .catch(error => console.log('error', error));
+      var res = fetch("https://computerclub.duckdns.org/attendance", requestOptions);
+     console.log(res);
       return res;
      
      
