@@ -126,13 +126,13 @@ var requestOptions = {
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   .then(response => response.text())
   .then(result => {res = result;
+    console.log(res);
 
     var dummy = {};
     res = JSON.parse(res).data;
     var dumdum = "";
     var name = [];
 
-    console.log(res);
     for (var i = 0; i<res.length; i++){
       dummy = res[i];
       dumdum = dummy.first_name + " " + dummy.last_name;
