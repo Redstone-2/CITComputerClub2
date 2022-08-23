@@ -89,8 +89,14 @@ button:disabled {
             var res = "";
       fetch("https://computerclub.duckdns.org/attendance", requestOptions)
         .then(response => response.text())
-        .then(result => res = result)
-        .catch(error => console.log('error', error));
+        .then(result => {res = result;
+       var result = JSON.parse(res);
+        if (result.error == null){
+          alerts("Success");
+        } else {
+          alerts(res.error);
+        }
+                  });
      console.log(res);
       return res;
      
@@ -132,11 +138,17 @@ function showPosition(position) {
   }
   }
   
-  var day = new Date();
-  if (day.getDay() != 5 || day.getHours() != 16){
-      document.getElementById("attendenceButton").disabled = true; 
-      document.getElementById("message").innerHTML = "Attandance can only be done during meeting hours!";
-      document.getElementById("alert").style.display='block';
-  }
+  //var day = new Date();
+  //if (day.getDay() != 5 || day.getHours() != 16){
+  //    document.getElementById("attendenceButton").disabled = true; 
+  //    alerts("Attandance can only be done during meeting hours!");
+  //}
+  
+  function alerts(message){
+   var x = document.getElementById("message");
+  var popup = document.getElementById("alert");
+  popup.style.display='block';
+  x.innerHTML = message;
+}
   
 </script>
