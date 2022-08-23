@@ -24,6 +24,8 @@ permalink: /admin/signup
 .closebtn:hover {
   color: black;
 }
+  span.avoidwrap { display:inline-block; }
+
 </style>
     <div class="alert" id="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
@@ -42,11 +44,15 @@ permalink: /admin/signup
     <lable for="pswor"><b>Password</b></lable>
     <input type="password" placeholder="Password" name="pswor" id="pswor" required>
     
+    <span class="avoidwrap">
     <label for="cshs"><b>Part of CSHS</b></label> <!-- CSHS_Member, Not_CSHS !-->
     <input type="checkbox" name="cshs" id="cshs" required>
+    </span
     
+    <span class="avoidwrap">
     <label for="admin"><b>Has Admin Privileges</b></label> <!-- ADMIN, USER !-->
     <input type="checkbox" name="admin" id="admin"required>
+    </span>
     
     <button id="my_button" type="button">Create User</button>
     </form>
