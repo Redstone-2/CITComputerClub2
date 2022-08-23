@@ -42,18 +42,12 @@ permalink: /admin/signup
     <lable for="pswor"><b>Password</b></lable>
     <input type="password" placeholder="Password" name="pswor" id="pswor" required>
     
-    <label for="cshs"><b>Part of CSHS</b></label>
-    <label for="TRUE">True</label>
-    <input type="radio" name="cshs" id="cshs" value="CSHS_Member"required>
-    <label for="FALSE">False</label>
-    <input type="radio" name="cshs" id="cshs" value="Not_CSHS"required>
+    <label for="cshs"><b>Part of CSHS</b></label> <!-- CSHS_Member, Not_CSHS !-->
+    <input type="checkbox" name="cshs" id="cshs" required>
     
-    <label for="admin"><b>Has Admin Privileges</b></label>
-    <label for="ADMIN">True</label>
-    <input type="radio" name="admin" id="admin" value="ADMIN"required>
-    <label for="USER">False</label>
-    <input type="radio" name="admin" id="admin" value="USER"required>
-      <button id="my_button" type="button">Create User</button>
+    <label for="admin"><b>Has Admin Privileges</b></label> <!-- ADMIN, USER !-->
+    <input type="checkbox" name="admin" id="admin"required>
+
     </form>
     
 
@@ -85,18 +79,18 @@ var lname = document.getElementById("lname").value;
 var pswor = document.getElementById("pswor").value;
 var email = document.getElementById("email").value;
   
- var radios = document.getElementsByName('cshs');
- for (var radio of radios){
-     if (radio.checked) {
-         var cshs =radio.value;
-     }
- }  
+ var checkBox = document.getElementsById('cshs');
+ if (checkBox.checked == true){
+   var cshs = "ADMIN";
+ } else {
+   var cshs = "USER";
+ }
   
-var radios = document.getElementsByName('admin');
-for (var radio of radios){
-     if (radio.checked) {
-         admin = radio.value;
-     }
+var checkBox = document.getElementsById('admin');
+ if (checkBox.checked == true){
+   var admin = "CSHS_Member";
+ } else {
+   var admin = "Not_CSHS";
  }
  
 var myHeaders = new Headers();
