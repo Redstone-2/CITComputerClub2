@@ -81,7 +81,6 @@ function getCookie(cname) {
 }
 
 function loadUser(){  
-  console.log(res);
   var inp = document.getElementById("name").value.toLowerCase();
   var dummy = "";
   
@@ -126,7 +125,6 @@ var requestOptions = {
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   .then(response => response.text())
   .then(result => {res = result;
-    console.log(res);
 
     var dummy = {};
     res = JSON.parse(res).data;
