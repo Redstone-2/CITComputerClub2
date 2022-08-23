@@ -88,7 +88,7 @@ button:disabled {
       };
             var res = "";
       fetch("https://computerclub.duckdns.org/attendance", requestOptions)
-        .then(response => {res = response;
+        .then(async response => {res = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
        console.log(res);
         if (res.error == null){
           alerts("Success");
@@ -98,29 +98,19 @@ button:disabled {
                   })
      .catch(error => alerts(error));
      
-      return res;
-     
      
   }
   var x = document.getElementById("message");
   var popup = document.getElementById("alert");
   function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition, showError);
+    navigator.geolocation.getCurrentPosition(getAttendance, showError);
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   };
   popup.style.display='block';
 }
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-    
-  var status = getAttendance(position);
-    x.innerHTML = status;
-  popup.style.display='block';
- 
-}
+
   function showError(error) {
   switch(error.code) {
     case error.PERMISSION_DENIED:
