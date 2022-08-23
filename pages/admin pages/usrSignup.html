@@ -31,7 +31,9 @@ permalink: /admin/signup
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
       <p id="message"></p>
 </div>
-  <form>
+  <form autocomplete="off">
+    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+    
     <label for="fname"><b>First Name</b></label>
     <input type="text" placeholder="First Name" name="fname" id="fname" required>
     
