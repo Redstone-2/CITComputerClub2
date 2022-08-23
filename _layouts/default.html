@@ -335,8 +335,8 @@
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
     <div class="container">
-      <label for="email"><b>Email</b></label>
-      <input type="text" enctype="multipart/form-data" placeholder="Enter Email" name="email" id="email"required>
+      <label for="emailemailogin"><b>Email</b></label>
+      <input type="text" enctype="multipart/form-data" placeholder="Enter Email" name="emailogin" id="emailogin"required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" enctype="multipart/form-data" placeholder="Enter Password" name="psw" required id="psw">
@@ -442,7 +442,7 @@ function usrLogin() {
   var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
    
-var email = document.getElementById("email").value;
+var email = document.getElementById("emailogin").value;
 var pass = document.getElementById("psw").value;
    
 var raw = JSON.stringify({
