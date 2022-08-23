@@ -54,10 +54,10 @@ permalink: /admin/usrinfo
     <input type="text" placeholder="Last User Attendance" name="date" id="date" readonly>
     
     <label for="cshs"><b>Part of CSHS</b></label>
-    <input type="checkbox" name="cshs" id="cshs" value="CSHS_Member" readonly>
+    <input type="checkbox" name="cshs" id="cshs" value="CSHS_Member" disabled>
     
     <label for="admin"><b>Has Admin Privileges</b></label>
-    <input type="checkbox" name="admin" id="adminss" value="ADMIN" readonly>
+    <input type="checkbox" name="admin" id="adminss" value="ADMIN" disabled>
 
     
   </form>
@@ -97,7 +97,7 @@ function loadUser(){
        document.getElementById("fname").value = res[i].first_name;
        document.getElementById("lname").value = res[i].last_name;
        document.getElementById("email").value = res[i].email;
-       document.getElementById("date").value = res[i].login_date;  //moment(res[i].login_date).format('MMMM Do YYYY, h:mm:ss a');
+       document.getElementById("date").value = moment(res[i].login_date).format('MMMM Do YYYY, h:mm:ss a');
 
        if (res[i].cshs == "CSHS_Member"){
        document.getElementById("cshs").checked = true
