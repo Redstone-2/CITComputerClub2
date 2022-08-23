@@ -39,11 +39,11 @@ permalink: /admin/signup
     <label for="lname"><b>Last Name</b></label>
     <input autocomplete="false" type="text" placeholder="Last Name" name="lname" id="lname" required>
     
-    <label for="email"><b>Email</b></label>
-    <input autocomplete="false" type="text" placeholder="Email" name="email" id="email" required>
+    <label for="emaile"><b>Email</b></label>
+    <input autocomplete="false" type="text" placeholder="Email" name="emaile" id="emaile" required>
     
     <lable for="pswor"><b>Password</b></lable>
-    <input autocomplete="false" type="password" placeholder="Password" name="pswor" id="pswor" required>
+    <input autocomplete="new-password" type="password" placeholder="Password" name="pswor" id="pswor" required>
     
     <span class="avoidwrap">
     <label for="cshs"><b>Part of CSHS</b></label> <!-- CSHS_Member, Not_CSHS !-->
@@ -85,7 +85,7 @@ var form = document.getElementById("loginForm");
 var fname = document.getElementById("fname").value;
 var lname = document.getElementById("lname").value; 
 var pswor = document.getElementById("pswor").value;
-var email = document.getElementById("email").value;
+var email = document.getElementById("emaile").value;
   
  var checkBox = document.getElementsById('cshs');
  if (checkBox.checked == true){
