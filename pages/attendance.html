@@ -29,7 +29,7 @@ permalink: attendance
 </style>
   </head>
   <body>
-    <button href="javascript:void(0);" onclick="getLocation()">Check Attendence</button>
+    <button href="javascript:void(0);" onclick="getLocation()" id="attendenceButton">Check Attendence</button>
     <div class="alert" id="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
       <p id="message"></p>
@@ -125,4 +125,12 @@ function showPosition(position) {
       break;
   }
   }
+  
+  var day = new Date();
+  if (day.getDay() != 5 || day.getHours() != 16){
+      document.getElementById("attendenceButton").disabled = true; 
+      document.getElementById("message").innerHTML = "Attandance can only be done during meeting hours!";
+      document.getElementById("alert").style.display='block';
+  }
+  
 </script>
