@@ -463,7 +463,7 @@ fetch("https://computerclub.duckdns.org/login", requestOptions)
   var result = JSON.parse(result);
   console.log(result);
   document.cookie = "User="+result.token+"; path=/CITComputerClub2;";
-  //location.reload();
+  location.reload();
 })
   .catch(error => console.log('error', error));
  }
