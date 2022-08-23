@@ -26,10 +26,16 @@ permalink: attendance
 .closebtn:hover {
   color: black;
 }
+      
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+      
 </style>
   </head>
   <body>
-    <button href="javascript:void(0);" onclick="getLocation()" id="attendenceButton" disabled>Check Attendence</button>
+    <button href="javascript:void(0);" onclick="getLocation()" id="attendenceButton">Check Attendence</button>
     <div class="alert" id="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
       <p id="message"></p>
