@@ -96,7 +96,8 @@ button:disabled {
         } else {
           alerts(res.error);
         }
-                  });
+                  })
+     .catch(error => alerts(error));
      console.log(res);
       return res;
      
