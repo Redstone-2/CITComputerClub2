@@ -71,7 +71,7 @@ permalink: /admin/usrinfo
       </div>
     <div class="container">
       <p> To delete a user, type "DELETE" into the text box and press enter. Then press the Delete User button.
-          <input type="text" autocomplete="off" name="delconf" id="delconf" pattern="[DELETE]{6}" required>
+          <input type="text" autocomplete="off" name="delconf" id="delconf">
       </div>
    <button id="delbtnconf" onclick= "">Delete User</button>
   
@@ -183,7 +183,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       loadUser();
     }
   });
-   otdocument.getElementById("delconf").addEventListener("keydown", function (e) {
+   document.getElementById("delconf").addEventListener("keydown", function (e) {
     if (e.key === "Enter") {  
       if (document.getElementById("delconf").value === "DELETE"){
       document.getElementById("delbtnconf").disabled = false;
