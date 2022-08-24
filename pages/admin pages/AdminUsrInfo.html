@@ -132,7 +132,6 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
         return;
         }
     var dumdum = "";
-    var name = [];
     var dudummm = atob('YWxleEBnbWFpbC5jb20=').split(",");
                            console.log(dudummm);
     for (var i = 0; i < res.length; i++){
@@ -142,10 +141,9 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
           console.log(i);
       if (tr = 1){
         console.log(i);
-      dumdum = res[i].first_name + " " + dummy.last_name;
-      name.push(dumdum.toLowerCase());
+      dumdum = res[i].first_name + " " + res[i].last_name;
       var elementname = document.createElement("option");
-      elementname.value = dummy.first_name + " " + dummy.last_name;
+      elementname.value = dumdum;
       var card = document.getElementById("names")
       card.appendChild(elementname);
       }
