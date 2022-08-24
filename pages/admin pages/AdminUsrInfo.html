@@ -33,7 +33,7 @@ permalink: /admin/usrinfo
       <p id="message"></p>
 </div>
 
- <form id="usrform" style="display: none;">
+ <div id="usrform" style="display: none;">
     <label for="fname"><b>First Name</b></label>
     <input type="text" placeholder="First Name" name="fname" id="fname" readonly>
     
@@ -51,9 +51,12 @@ permalink: /admin/usrinfo
     
     <label for="admin"><b>Has Admin Privileges</b></label>
     <input type="checkbox" name="admin" id="adminss" value="ADMIN" disabled>
+   
+         <button type="button" class="cancelbtn">Delete User</button>
+
 
     
-  </form>
+  </div>
 
 <script type = "text/javascript">
   console.log("500");
