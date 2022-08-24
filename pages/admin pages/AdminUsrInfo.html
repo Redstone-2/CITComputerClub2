@@ -57,7 +57,7 @@ permalink: /admin/usrinfo
     <label for="admin"><b>Has Admin Privileges</b></label>
     <input type="checkbox" name="admin" id="adminss" value="ADMIN" disabled>
    </span><br>
-         <button type="button" class="cancelbtn delbtn" onclick="document.getElementById('id02').style.display='block'">Delete User</button>
+         <button type="button" class="cancelbtn delbtn" onclick="document.getElementById('id02').style.display='block'; document.getElementById('delconf').value = ''">Delete User</button>
    <br>
 
   </div>
@@ -76,7 +76,7 @@ permalink: /admin/usrinfo
    <button id="delbtnconf" onclick= "">Delete User</button>
   
 <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('delconf').value = ''" class="cancelbtn">Cancel</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
   </div>
     </div>
   </div>
