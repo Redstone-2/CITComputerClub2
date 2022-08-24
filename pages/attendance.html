@@ -128,11 +128,11 @@ button:disabled {
   }
   }
   
-  //var day = new Date();
-  //if (day.getDay() != 5 || day.getHours() != 16){
-  //    document.getElementById("attendenceButton").disabled = true; 
-  //    alerts("Attandance can only be done during meeting hours!");
-  //}
+  var day = new Date();
+  if (day.getDay() != 5 || day.getHours() != 16){
+      document.getElementById("attendenceButton").disabled = true; 
+      alerts("Attandance can only be done during meeting hours!");
+  }
   
   function alerts(message){
    var x = document.getElementById("message");
