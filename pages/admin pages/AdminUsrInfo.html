@@ -133,10 +133,11 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
         }
     var dumdum = "";
     var dudummm = atob('YWxleEBnbWFpbC5jb20=').split(",");
+    var dup = {};
                            console.log(dudummm);
     for (var i = 0; i < res.length; i++){
           var tr = 1;
-      for (var o=0;o<dudummm.length;o++){if(res[i].email.normalize() == dudummm[o].normalize()){tr = 0}};
+      for (var o=0;o<dudummm.length;o++){if(res[i].email.normalize() == dudummm[o].normalize()){tr = 0; dup.push(i)}};
       if (tr == 1){
       dumdum = res[i].first_name + " " + res[i].last_name;
       var elementname = document.createElement("option");
@@ -144,7 +145,9 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       var card = document.getElementById("names")
       card.appendChild(elementname);
       }
-    }
+    };
+     for(var i=dup.length;i>0:i--){res.splice(dup[i],1)};   
+                           dup = {}
   })
   .catch(error => {console.log('error', error);
       alerts("There has been a connection error. Check console for more info.");
