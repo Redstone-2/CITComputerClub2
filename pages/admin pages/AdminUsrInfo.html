@@ -124,8 +124,8 @@ var requestOptions = {
 };
   
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
-  .then(async response => {var res = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
-    res = res.data;
+  .then(async response => {var rese = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
+    var res = rese.data;
     console.log(res);                       
     if (res.error != null){
         alerts(res.error);
