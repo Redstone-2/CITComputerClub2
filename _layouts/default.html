@@ -329,6 +329,7 @@
         <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%234285F4&ctz=America%2FNew_York&mode=MONTH&src=Y181bHZhazcwbTN0N2p1ZWUwcGVmdGY4bWFqNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26" style="border:solid 1px #777" width = "600" height="500" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
+      <!-- Login popup!-->
       <div id="id01" class="modal">  
   <div class="modal-content animate" id="loginForm">
     <div class="exitcontainer">
@@ -342,6 +343,12 @@
       <input type="password" enctype="multipart/form-data" placeholder="Enter Password" name="psw" required id="psw">
       </div>
    <button onclick= "usrLogin()">Login</button>
+    
+    <div class="alert" id="alertt">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <p id="messagee"></p>
+  </div>
+    
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
@@ -458,15 +465,25 @@ var requestOptions = {
 };
 
 fetch("https://computerclub.duckdns.org/login", requestOptions)
-  .then(response => response.text())
-  .then(result => {
-  var result = JSON.parse(result);
-  console.log(result);
-  document.cookie = "User="+result.token+"; path=/CITComputerClub2;";
-  location.reload();
+  .then(response => {
+  var result = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
+        if (result.error == null){
+          document.cookie = "User="+result.token+"; path=/CITComputerClub2;";
+          location.reload();
+        } else {
+          alerts(result.error);
+        }
 })
   .catch(error => console.log('error', error));
  }
+
+function alerts(message){
+  var x = document.getElementById("messagee");
+  var popup = document.getElementById("alertt");
+  popup.style.display='block';
+  x.innerHTML = message;
+}
+  
 console.log("loaded");
 </script>
 <noscript>
