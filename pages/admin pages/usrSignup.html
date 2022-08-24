@@ -121,9 +121,8 @@ var requestOptions = {
 };
  
 fetch("https://computerclub.duckdns.org/admin/signup", requestOptions)
-  .then(response => response.text())
-  .then(result => {console.log(result);
-       var result = JSON.parse(result);
+  .then(response =>  {console.log(response);
+       var result = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
         if (result.error == null){
           alerts("Success");
         } else {
