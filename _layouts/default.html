@@ -465,7 +465,7 @@ var requestOptions = {
 };
 
 fetch("https://computerclub.duckdns.org/login", requestOptions)
-  .then(response => {
+  .then(async response => {
   var result = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
         if (result.error == null){
           document.cookie = "User="+result.token+"; path=/CITComputerClub2;";
