@@ -146,7 +146,9 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       card.appendChild(elementname);
       }
     };
+                           console.log(dup);
      for(var i=dup.length;i>0;i--){res.splice(dup[i],1)};   
+                           console.log(res);
      dup = [];
   })
   .catch(error => {console.log('error', error);
