@@ -60,12 +60,26 @@ permalink: /admin/usrinfo
          <button type="button" class="cancelbtn delbtn">Delete User</button>
    <br>
 
-
-    
   </div>
-
+  
+  <!-- Delete Usr Modal !-->
+  
+  <div id="id02" class="modal">  
+  <div class="modal-content animate" id="deleusr">
+      <div class="exitcontainer">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+    <div class="container">
+      <p> To delete a user, type "DELETE" into the text box and press enter. Then press the Delete User button.
+          <input type="text" placeholder="" name="delconf" id="delconf" pattern="[DELETE]{6}" required>
+      </div>
+   <button id="delbtnconf" onclick= "">Delete User</button>
+  </div>
+<div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </div>
 <script type = "text/javascript">
-  console.log("500");
   
 function getCookie(cname) {
   let name = cname + "=";
@@ -122,7 +136,7 @@ function alerts(message){
   popup.style.display='block';
   x.innerHTML = message;
 }
-  console.log("600");
+document.getElementById("delbtnconf").disabled = true;
   var myHeaders = new Headers();
 myHeaders.append("token", getCookie("User"));
  
@@ -135,7 +149,7 @@ var requestOptions = {
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   .then(async response => {var rese = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
     res = rese.data;
-    console.log(res);                       
+                           
     if (res.error != null){
         alerts(res.error);
         return;
@@ -155,20 +169,26 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       card.appendChild(elementname);
       }
     };
-                           console.log(dup);
      for(var i=dup.length-1;i>=0;i--){res.splice(dup[i],1)};   
-                           console.log(res);
      dup = [];
   })
   .catch(error => {console.log('error', error);
       alerts("There has been a connection error. Check console for more info.");
                  });
   
-     document.getElementById("loadinfo").addEventListener("click", loadUser());
+     document.getElementById("loadinfo").addEventListener("click", loadUser);
  var input = document.getElementById("name");
    input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {  
       loadUser();
+    }
+  });
+  var input = document.getElementById("delconf");
+   input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {  
+      if (document.getElementById("delconf") === "DELETE"){
+      document.getElementById("delbtnconf").disabled = false;
+      }
     }
   });
 </script>
