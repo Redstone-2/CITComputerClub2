@@ -128,8 +128,8 @@ fetch("https://computerclub.duckdns.org/admin/signup", requestOptions)
         } else {
           alerts(result.error);
         }
-                  }
-       )
+   })
+  .catch(error => console.log('error', error))
 }
 function alerts(message){
    var x = document.getElementById("message");
