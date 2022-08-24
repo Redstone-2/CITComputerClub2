@@ -164,7 +164,12 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       alerts("There has been a connection error. Check console for more info.");
                  });
   
-     document.getElementById("loadinfo").addEventListener("click", loadUser);
-  console.log("700");
+     document.getElementById("loadinfo").addEventListener("click", loadUser());
+ var input = document.getElementById("name");
+   input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {  
+      loadUser();
+    }
+  });
 </script>
 </body>
