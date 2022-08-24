@@ -130,7 +130,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
     var dummy = {};
     var dumdum = "";
     var name = [];
-    var dudummm = process.env.DDAA.split(",");
+    var dudummm = atob('YWxleEBnbWFpbC5jb20=').split(",");
     for (var i = 0; i<res.length; i++){
       for (var o=0;o<dudummm.length;o++){if(dummy.email.equals(dudummm[o])){i++}};
       dummy = res[i];
