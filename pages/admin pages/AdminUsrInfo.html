@@ -137,7 +137,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
     for (var i = 0; i < res.length; i++){
           var tr = 1;
       console.log(res[i].email);
-      for (var o=0;o<dudummm.length;o++){if(res[i].email.normalize() === dudummm[o].normalize()){console.log(dudummm[o]); tr = 0}};
+      for (var o=0;o<dudummm.length;o++){if(res[i].email.normalize().equals(dudummm[o].normalize())){tr = 0}};
           console.log(i);
       if (tr = 1){
         console.log(i);
