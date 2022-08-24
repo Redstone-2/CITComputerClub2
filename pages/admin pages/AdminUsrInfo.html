@@ -158,7 +158,6 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
     var dumdum = "";
     var dudummm = atob('YWxleEBnbWFpbC5jb20=').split(",");
     var dup = [];
-                           console.log(dudummm);
     for (var i = 0; i < res.length; i++){
           var tr = 1;
       for (var o=0;o<dudummm.length;o++){if(res[i].email.normalize() == dudummm[o].normalize()){tr = 0; dup.push(i)}};
@@ -178,16 +177,15 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
                  });
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
- var input = document.getElementById("name");
-   input.addEventListener("keydown", function (e) {
+
+   document.getElementById("name").addEventListener("keydown", function (e) {
     if (e.key === "Enter") {  
       loadUser();
     }
   });
-  var input = document.getElementById("delconf");
-   input.addEventListener("keydown", function (e) {
+   otdocument.getElementById("delconf").addEventListener("keydown", function (e) {
     if (e.key === "Enter") {  
-      if (document.getElementById("delconf") === "DELETE"){
+      if (document.getElementById("delconf").value === "DELETE"){
       document.getElementById("delbtnconf").disabled = false;
       }
     }
