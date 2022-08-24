@@ -122,10 +122,10 @@ var requestOptions = {
   headers: myHeaders,
   redirect: 'follow'
 };
-  
+ var res = "";
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   .then(async response => {var rese = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
-    var res = rese.data;
+    res = rese.data;
     console.log(res);                       
     if (res.error != null){
         alerts(res.error);
@@ -137,7 +137,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
     for (var i = 0; i < res.length; i++){
           var tr = 1;
       console.log(res[i].email);
-      //for (var o=0;o<dudummm.length;o++){if(res[i].email.equals(dudummm[o])){console.log(dudummm[o]); tr = 0}};
+      for (var o=0;o<dudummm.length;o++){if(res[i].email.equals(dudummm[o])){console.log(dudummm[o]); tr = 0}};
           console.log(i);
       if (tr = 1){
         console.log(i);
