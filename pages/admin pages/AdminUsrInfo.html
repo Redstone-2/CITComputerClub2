@@ -3,13 +3,6 @@ layout: default
 permalink: /admin/usrinfo
 ---
 <style>
-  .alert {
-  padding: 20px;
-  background-color: #c2c2c2;
-  color: white;
-  display: none;
-}
-
 .closebtn {
   margin-left: 15px;
   color: white;
@@ -113,6 +106,12 @@ function loadUser(){
     }
   }
 }
+function alerts(message){
+   var x = document.getElementById("message");
+  var popup = document.getElementById("alert");
+  popup.style.display='block';
+  x.innerHTML = message;
+}
   
   var myHeaders = new Headers();
 myHeaders.append("token", getCookie("User"));
@@ -123,11 +122,12 @@ var requestOptions = {
   redirect: 'follow'
 };
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
-  .then(response => response.text())
-  .then(result => {res = result;
-
+  .then(async response => {var res = result.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
+    if (result.error != null){
+        alerts("result.error");
+        return;
+        }
     var dummy = {};
-    res = JSON.parse(res).data;
     var dumdum = "";
     var name = [];
 
@@ -142,9 +142,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
     }
   })
   .catch(error => {console.log('error', error);
-      document.getElementById("usrform").style.display = "none";
-      document.getElementById("alert").style.display = "block";
-      document.getElementById("message").innerHTML = "There has been a connection error. Check console for more info.";
+      alerts("There has been a connection error. Check console for more info.");
                   });
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
