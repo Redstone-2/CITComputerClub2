@@ -11,6 +11,7 @@ var pswor = document.getElementById("pswor").value;
 var email = document.getElementById("emaile").value;
   if (!fname || !lname || !pswor || !email){
     alerts("Please provide all required data");
+    return;
   }
   
  var checkBox = document.getElementById('cshs');
