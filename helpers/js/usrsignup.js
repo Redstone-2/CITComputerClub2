@@ -9,6 +9,9 @@ var fname = document.getElementById("fname").value;
 var lname = document.getElementById("lname").value; 
 var pswor = document.getElementById("pswor").value;
 var email = document.getElementById("emaile").value;
+  if (!fname || !lname || !pswor || !email){
+    alerts("Please provide all required data");
+  }
   
  var checkBox = document.getElementById('cshs');
  if (checkBox.checked == true){
