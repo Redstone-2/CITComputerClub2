@@ -118,9 +118,9 @@ function usrLogin() {
     .catch(error => console.log('error', error));
    }
 
-function alerts(message){
-  var x = document.getElementById("messagee");
-  var popup = document.getElementById("alertt");
+function alerts(message, extra){
+  var x = document.getElementById("message"+extra);
+  var popup = document.getElementById("alert"+extra);
   popup.style.display='block';
   x.innerHTML = message;
 }
