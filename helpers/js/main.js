@@ -112,13 +112,13 @@ function usrLogin() {
               document.cookie = "User="+result.token+"; path=/CITComputerClub2;";
               location.reload();
             } else {
-              alerts(result.error);
+              alerts(result.error, "1");
             }
      })
     .catch(error => console.log('error', error));
    }
 
-function alerts(message, extra){
+function alerts(message, extra = ""){
   var x = document.getElementById("message"+extra);
   var popup = document.getElementById("alert"+extra);
   popup.style.display='block';
