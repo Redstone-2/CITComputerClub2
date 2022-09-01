@@ -276,14 +276,53 @@ body {
         #loginFrame{
           width: 100%;
         }
-      .alert {
-  padding: 20px;
-  background-color: #c2c2c2;
-  color: white;
-  display: none;
-}
       span.avoidwrap { display:inline-block; }
       button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+/* Custom Alerts */
+.alert {
+  padding: 20px;
+  background-color: #c2c2c2;
+  color: white;
+  display: none;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+/* Groups page */
+ .grid-outer {
+   display: grid;
+   grid-template-colums: auto;
+ }
+.grid-inner {
+  display: grid;
+  grid-template-areas: 
+     'title title title'
+     'photo blurb blurb';
+  grid-gap: 10px;
+  padding: 10px;
+}
+.grid-inner > div {
+  text-align: left;
+  padding: 20px 0;
+}
+ .title {grid-area: title; font-weight: bold; font face="Arial"}
+ .photo {grid-area: photo;}
+ .blurb {grid-area: blurb;}
+/* admin user page */
+  .delbtn{
+    float: right;
+  }
