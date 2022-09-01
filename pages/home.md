@@ -2,23 +2,6 @@
 layout: default
 permalink: home
 ---
-<style>
-  .grid-inner {
-  display: grid;
-  grid-template-areas: 
-     'title title title'
-     'photo blurb blurb';
-  grid-gap: 10px;
-  padding: 10px;
-}
-.grid-inner > div {
-  text-align: left;
-  padding: 20px 0;
-}
- .title {grid-area: title; font-weight: bold;}
- .photo {grid-area: photo;}
- .blurb {grid-area: blurb;}
-</style>
 
   <div class="grid-inner">
    <div class="title">Computer Club President</div>
