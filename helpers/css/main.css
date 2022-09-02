@@ -326,3 +326,27 @@ body {
   .delbtn{
     float: right;
   }
+
+          /* IN-DEV PAGES*/
+
+/*post*/
+  textarea{
+  width: 100%;
+  min-height: 150px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: 'Montserrat';
+}
+  #post-title{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
