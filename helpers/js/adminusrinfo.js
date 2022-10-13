@@ -50,7 +50,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
         alerts(res.error);
         return;
         }
-    var formatted = makeNames('YWxleEBnbWFpbC5jb20=', res));
+    var formatted = makeNames('YWxleEBnbWFpbC5jb20=', res);
     for (var i = 0; i < formatted.length; i++){
       var elementname = document.createElement("option");
       elementname.value = formatted[i];
