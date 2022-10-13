@@ -43,17 +43,18 @@ var requestOptions = {
 };
  var res = "";
 fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
-  .then(async response => {var rese = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
-    res = rese.data;
+  .then(async response => {var res = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
+    res = res.data;
                            
     if (res.error != null){
         alerts(res.error);
         return;
         }
-    var formatted = makeNames('YWxleEBnbWFpbC5jb20=', res);
-    for (var i = 0; i < formatted.length; i++){
+    res = makeNames('YWxleEBnbWFpbC5jb20=', res);
+    console.log(res);
+    for (var i = 0; i < res.length; i++){
       var elementname = document.createElement("option");
-      elementname.value = formatted[i];
+      elementname.value = res[i];
       var card = document.getElementById("names")
       card.appendChild(elementname);
       }
@@ -80,18 +81,25 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
 function makeNames(nulls, res){
     var names = [];
     var dudummm = atob(nulls).split(",");
+  console.log(dudummm);
+  console.log(res);
     var exccess = [];
     for (var i = 0; i < res.length; i++){
           var tr = 1;
       for (var o=0;o<dudummm.length;o++)
       	{
         if(res[i].email.normalize() == dudummm[o].normalize()){
-        tr = 0; exccess.push(i)}};
+        tr = 0;
+        console.log(res[i].email.normalize());
+        exccess.push(i)}};
       if (tr == 1){
       names = res[i].first_name + " " + res[i].last_name;
       }
     };
-         for(var i=exccess.length-1;i>=0;i--){res.splice(exccess[i],1)};   
+  console.log(exccess)
+         for(var i=exccess.length-1;i>=0;i--){
+           res.splice(exccess[i],1)
+         };   
      exccess = [];
      return names;
   }
