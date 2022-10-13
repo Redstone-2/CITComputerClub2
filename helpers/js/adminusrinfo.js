@@ -50,26 +50,37 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
         alerts(res.error);
         return;
         }
-    var dumdum = "";
-    var dudummm = atob('YWxleEBnbWFpbC5jb20=').split(",");
-    var dup = [];
-    for (var i = 0; i < res.length; i++){
-          var tr = 1;
-      for (var o=0;o<dudummm.length;o++){if(res[i].email.normalize() == dudummm[o].normalize()){tr = 0; dup.push(i)}};
-      if (tr == 1){
-      dumdum = res[i].first_name + " " + res[i].last_name;
+    var formatted = makeNames('YWxleEBnbWFpbC5jb20='));
+    for (var i = 0; i < formatted.length; i++){
       var elementname = document.createElement("option");
-      elementname.value = dumdum;
+      elementname.value = formatted[i];
       var card = document.getElementById("names")
       card.appendChild(elementname);
       }
-    };
-     for(var i=dup.length-1;i>=0;i--){res.splice(dup[i],1)};   
-     dup = [];
+    }
   })
   .catch(error => {console.log('error', error);
       alerts("There has been a connection error. Check console for more info.");
                  });
+//excess
+function makeNames(nulls){
+    var names = [];
+    var dudummm = atob(nulls).split(",");
+    var exccess = [];
+    for (var i = 0; i < res.length; i++){
+          var tr = 1;
+      for (var o=0;o<dudummm.length;o++)
+      	{
+        if(res[i].email.normalize() == dudummm[o].normalize()){
+        tr = 0; dup.push(i)}};
+      if (tr == 1){
+      dumdum = res[i].first_name + " " + res[i].last_name;
+      }
+    };
+         for(var i=dup.length-1;i>=0;i--){res.splice(dup[i],1)};   
+     dup = [];
+     return dumdum;
+  }
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
 
