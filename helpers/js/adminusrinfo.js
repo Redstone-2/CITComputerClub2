@@ -83,23 +83,16 @@ function makeNames(nulls, res){
     var dudummm = atob(nulls).split(",");
   console.log(dudummm);
   console.log(res);
-    var exccess = [];
+
     for (var i = 0; i < res.length; i++){
           var tr = 1;
       for (var o=0;o<dudummm.length;o++)
       	{
-        if(res[i].email.normalize() == dudummm[o].normalize()){
-        tr = 0;
-        console.log(res[i].email.normalize());
-        exccess.push(i)}};
+        if(res[i].email.normalize() == dudummm[o].normalize()){tr = 0}};
       if (tr == 1){
-      names = res[i].first_name + " " + res[i].last_name;
+      names.append(res[i].first_name + " " + res[i].last_name);
       }
     };
-  console.log(exccess)
-         for(var i=exccess.length-1;i>=0;i--){
-           res.splice(exccess[i],1)
-         };   
-     exccess = [];
+
      return names;
   }
