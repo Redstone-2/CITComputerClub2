@@ -50,7 +50,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
         alerts(res.error);
         return;
         }
-    var formatted = makeNames('YWxleEBnbWFpbC5jb20='));
+    var formatted = makeNames('YWxleEBnbWFpbC5jb20=', res));
     for (var i = 0; i < formatted.length; i++){
       var elementname = document.createElement("option");
       elementname.value = formatted[i];
@@ -62,25 +62,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
   .catch(error => {console.log('error', error);
       alerts("There has been a connection error. Check console for more info.");
                  });
-//excess
-function makeNames(nulls){
-    var names = [];
-    var dudummm = atob(nulls).split(",");
-    var exccess = [];
-    for (var i = 0; i < res.length; i++){
-          var tr = 1;
-      for (var o=0;o<dudummm.length;o++)
-      	{
-        if(res[i].email.normalize() == dudummm[o].normalize()){
-        tr = 0; dup.push(i)}};
-      if (tr == 1){
-      dumdum = res[i].first_name + " " + res[i].last_name;
-      }
-    };
-         for(var i=dup.length-1;i>=0;i--){res.splice(dup[i],1)};   
-     dup = [];
-     return dumdum;
-  }
+
   
      document.getElementById("loadinfo").addEventListener("click", loadUser);
 
@@ -93,6 +75,24 @@ function makeNames(nulls){
     if (e.key === "Enter") {  
       if (document.getElementById("delconf").value === "DELETE"){
       document.getElementById("delbtnconf").disabled = false;
+      }}});
+
+
+function makeNames(nulls, res){
+    var names = [];
+    var dudummm = atob(nulls).split(",");
+    var exccess = [];
+    for (var i = 0; i < res.length; i++){
+          var tr = 1;
+      for (var o=0;o<dudummm.length;o++)
+      	{
+        if(res[i].email.normalize() == dudummm[o].normalize()){
+        tr = 0; exccess.push(i)}};
+      if (tr == 1){
+      names = res[i].first_name + " " + res[i].last_name;
       }
-    }
-  });
+    };
+         for(var i=exccess.length-1;i>=0;i--){res.splice(exccess[i],1)};   
+     exccess = [];
+     return names;
+  }
