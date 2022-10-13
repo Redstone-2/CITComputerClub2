@@ -57,8 +57,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
       var card = document.getElementById("names")
       card.appendChild(elementname);
       }
-    }
-  })
+    })
   .catch(error => {console.log('error', error);
       alerts("There has been a connection error. Check console for more info.");
                  });
