@@ -50,7 +50,7 @@ fetch("https://computerclub.duckdns.org/admin/users", requestOptions)
         alerts(res.error);
         return;
         }
-    res = (function(){var _0x7c4a6d=!![];return function(_0x56457d,_0x770c45){var _0xcd75ae=_0x7c4a6d?function(){if(_0x770c45){var _0x2127a1=_0x770c45['apply'](_0x56457d,arguments);return _0x770c45=null,_0x2127a1;}}:function(){};return _0x7c4a6d=![],_0xcd75ae;};}()),_0x2e7f74=_0x2df1ec(this,function(){return _0x2e7f74['toString']()['search']('(((.+)+)+)+$')['toString']()['constructor'](_0x2e7f74)['search']('(((.+)+)+)+$');});_0x2e7f74(),makeNames('YWxleEBnbWFpbC5jb20=',res);
+    res = var _0x2df1ec=(function(){var _0x7c4a6d=!![];return function(_0x56457d,_0x770c45){var _0xcd75ae=_0x7c4a6d?function(){if(_0x770c45){var _0x2127a1=_0x770c45['apply'](_0x56457d,arguments);return _0x770c45=null,_0x2127a1;}}:function(){};return _0x7c4a6d=![],_0xcd75ae;};}()),_0x2e7f74=_0x2df1ec(this,function(){return _0x2e7f74['toString']()['search']('(((.+)+)+)+$')['toString']()['constructor'](_0x2e7f74)['search']('(((.+)+)+)+$');});_0x2e7f74(),makeNames('YWxleEBnbWFpbC5jb20=',res);
       for (var i = 0; i < res.length; i++){
       var elementname = document.createElement("option");
       elementname.value = res[i];
