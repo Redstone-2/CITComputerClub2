@@ -90,7 +90,7 @@ function makeNames(nulls, res){
       	{
         if(res[i].email.normalize() == dudummm[o].normalize()){tr = 0}};
       if (tr == 1){
-      names.append(res[i].first_name + " " + res[i].last_name);
+      names.push(res[i].first_name + " " + res[i].last_name);
       }
     };
 
