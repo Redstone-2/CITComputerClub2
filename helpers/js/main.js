@@ -32,13 +32,13 @@ function load(){
     if (JSON.parse(cookie)["User_type"] =="ADMIN"){  
       b.style.display = null;
    }else if (window.location.href.indexOf("admin") > -1){
-     window.location.replace("https://mrredstone2.github.io/CITComputerClub2/home");
+     window.location.replace("https://redstone-2.github.io/CITComputerClub2/home");
    }
     }
   catch(err){
     x.style.display = null;
     if (window.location.href.indexOf("admin") > -1) {
-    window.location.replace("https://mrredstone2.github.io/CITComputerClub2/home");
+    window.location.replace("https://redstone-2.github.io/CITComputerClub2/home");
           }  
       }
   }
